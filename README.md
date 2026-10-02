@@ -3,7 +3,13 @@
 파일을 창에 끌어놓으면 논문/강의자료/과제/연구데이터 등으로 자동 분류해 폴더에 넣어줍니다.
 분류가 애매하면 (AI 사용 시) 새 폴더를 만들어 넣습니다. **실행 전 미리보기, 실행 후 되돌리기 지원.**
 
-## 설치 (Windows, Python 3.10+)
+## 간편 설치 (Windows)
+1. 저장소를 ZIP으로 받아 압축 해제 (또는 `git clone`)
+2. `install.bat` 더블클릭 → 바탕화면에 "AI 폴더 정리기" 바로가기 생성 (Python 3.10+ 필요)
+
+**Setup.exe 설치파일**: GitHub → Actions → `build-windows-installer` → Run workflow → Artifacts에서 `AIFolderOrganizer-Setup.exe` 다운로드. (`v0.1.0` 같은 태그를 푸시하면 Releases에도 올라갑니다. 로컬 빌드는 `build_windows.bat`)
+
+## 수동 설치 (Windows, Python 3.10+)
 ```
 pip install -r requirements.txt
 ```
