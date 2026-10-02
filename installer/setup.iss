@@ -1,4 +1,4 @@
-[Setup]
+﻿[Setup]
 AppName=AI 폴더 정리기
 AppVersion=0.1.0
 DefaultDirName={autopf}\AIFolderOrganizer

@@ -5,7 +5,7 @@
 
 ## 간편 설치 (Windows)
 1. 저장소를 ZIP으로 받아 압축 해제 (또는 `git clone`)
-2. `install.bat` 더블클릭 → 바탕화면에 "AI 폴더 정리기" 바로가기 생성 (Python 3.10+ 필요)
+2. `install.bat` 더블클릭 → 바탕화면에 "AI 폴더 정리기" 바로가기 생성 (Python 3.10+ 필요). bat 파일은 한국어 Windows용 CP949+CRLF로 저장되어 있으니 편집 시 인코딩 유지
 
 **Setup.exe 설치파일**: GitHub → Actions → `build-windows-installer` → Run workflow → Artifacts에서 `AIFolderOrganizer-Setup.exe` 다운로드. (`v0.1.0` 같은 태그를 푸시하면 Releases에도 올라갑니다. 로컬 빌드는 `build_windows.bat`)
 

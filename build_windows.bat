@@ -1,7 +1,13 @@
 @echo off
-rem Setup.exe ì§ì ‘ ë¹Œë“œ (Windows + Python + Inno Setup 6 í•„ìš”)
+rem Setup.exe Á÷Á¢ ºôµå (Windows + Python + Inno Setup 6 ÇÊ¿ä)
+setlocal
 cd /d "%~dp0"
-python -m pip install pyinstaller tkinterdnd2 anthropic || exit /b 1
-python -m PyInstaller --noconfirm --windowed --name AIFolderOrganizer --collect-all tkinterdnd2 app_main.py || exit /b 1
-iscc installer\setup.iss || exit /b 1
-echo ì™„ë£Œ: installer\Output\AIFolderOrganizer-Setup.exe
+set PYTHONUTF8=1
+python -m pip install pyinstaller tkinterdnd2 anthropic
+if errorlevel 1 exit /b 1
+python -m PyInstaller --noconfirm --windowed --name AIFolderOrganizer --collect-all tkinterdnd2 app_main.py
+if errorlevel 1 exit /b 1
+iscc installer\setup.iss
+if errorlevel 1 exit /b 1
+echo ¿Ï·á: installer\Output\AIFolderOrganizer-Setup.exe
+pause

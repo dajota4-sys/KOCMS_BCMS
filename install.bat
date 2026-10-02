@@ -1,23 +1,44 @@
 @echo off
-chcp 65001 >nul
 setlocal
 cd /d "%~dp0"
-echo === AI í´ë” ì •ë¦¬ê¸° ì„¤ì¹˜ ===
-where python >nul 2>nul
-if errorlevel 1 (
-  echo Python 3.10 ì´ìƒì´ í•„ìš”í•©ë‹ˆë‹¤. ì„¤ì¹˜ í˜ì´ì§€ë¥¼ ì—½ë‹ˆë‹¤. ì„¤ì¹˜ ì‹œ "Add python.exe to PATH"ë¥¼ ì²´í¬í•˜ì„¸ìš”.
-  start https://www.python.org/downloads/windows/
-  pause & exit /b 1
-)
-if not exist .venv python -m venv .venv || goto :fail
-".venv\Scripts\python.exe" -m pip install --upgrade pip tkinterdnd2 anthropic || goto :fail
-set "TARGET=%~dp0.venv\Scripts\pythonw.exe"
-set "ARGS=-m organizer gui"
-powershell -NoProfile -Command "$s=(New-Object -ComObject WScript.Shell).CreateShortcut([Environment]::GetFolderPath('Desktop')+'\AI í´ë” ì •ë¦¬ê¸°.lnk'); $s.TargetPath='%TARGET%'; $s.Arguments='%ARGS%'; $s.WorkingDirectory='%~dp0'; $s.Save()"
+set PYTHONUTF8=1
+set PYTHONIOENCODING=utf-8
+echo ===== AI Æú´õ Á¤¸®±â ¼³Ä¡ =====
 echo.
-echo ì„¤ì¹˜ ì™„ë£Œ! ë°”íƒ•í™”ë©´ì˜ "AI í´ë” ì •ë¦¬ê¸°" ì•„ì´ì½˜ìœ¼ë¡œ ì‹¤í–‰í•˜ì„¸ìš”.
-echo (AI ë¶„ë¥˜ë¥¼ ì“°ë ¤ë©´ setx ANTHROPIC_API_KEY í‚¤ê°’  ì„ í•œ ë²ˆ ì‹¤í–‰ í›„ ìƒˆë¡œ ì‹œì‘)
-pause & exit /b 0
+
+set "PY="
+python --version >nul 2>nul && set "PY=python"
+if not defined PY (
+  py -3 --version >nul 2>nul && set "PY=py -3"
+)
+if not defined PY (
+  echo [¿À·ù] Python 3.10 ÀÌ»óÀÌ ÇÊ¿äÇÕ´Ï´Ù.
+  echo ¼³Ä¡ ÆäÀÌÁö¸¦ ¿±´Ï´Ù. ¼³Ä¡ÇÒ ¶§ "Add python.exe to PATH"¸¦ ²À Ã¼Å©ÇÏ¼¼¿ä.
+  start https://www.python.org/downloads/windows/
+  pause
+  exit /b 1
+)
+
+echo [1/3] °¡»óÈ¯°æ ¸¸µå´Â Áß...
+if not exist ".venv\Scripts\python.exe" %PY% -m venv .venv
+if errorlevel 1 goto fail
+
+echo [2/3] ÇÊ¿äÇÑ ÆĞÅ°Áö ¼³Ä¡ Áß... (1~2ºĞ °É¸± ¼ö ÀÖ½À´Ï´Ù)
+".venv\Scripts\python.exe" -m pip install --upgrade pip tkinterdnd2 anthropic
+if errorlevel 1 goto fail
+
+echo [3/3] ¹ÙÅÁÈ­¸é ¹Ù·Î°¡±â ¸¸µå´Â Áß...
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0make_shortcut.ps1" -AppDir "%~dp0."
+if errorlevel 1 goto fail
+
+echo.
+echo ¼³Ä¡°¡ ³¡³µ½À´Ï´Ù. ¹ÙÅÁÈ­¸éÀÇ "AI Æú´õ Á¤¸®±â" ¾ÆÀÌÄÜÀ¸·Î ½ÇÇàÇÏ¼¼¿ä.
+echo AI ºĞ·ù¸¦ ¾²·Á¸é ÇÑ ¹ø¸¸ ½ÇÇà: setx ANTHROPIC_API_KEY ¹ß±Ş¹ŞÀºÅ°
+pause
+exit /b 0
+
 :fail
-echo ì„¤ì¹˜ ì¤‘ ì˜¤ë¥˜ê°€ ë°œìƒí–ˆìŠµë‹ˆë‹¤.
-pause & exit /b 1
+echo.
+echo [¿À·ù] ¼³Ä¡ Áß ¹®Á¦°¡ ¹ß»ıÇß½À´Ï´Ù. À§ÀÇ ¸Ş½ÃÁö¸¦ È®ÀÎÇØ ÁÖ¼¼¿ä.
+pause
+exit /b 1
