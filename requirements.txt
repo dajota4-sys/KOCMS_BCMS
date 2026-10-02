@@ -1,0 +1,2 @@
+tkinterdnd2      # 드래그&드롭 (GUI)
+anthropic        # AI 분류 (선택)
