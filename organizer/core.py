@@ -262,10 +262,11 @@ def _free_name(path: Path) -> Path:
         n += 1
 
 
-def apply_plan(plan: list[Move], dest_root: Path) -> Path:
-    """계획 실행. 되돌리기용 journal 파일 경로 반환. 덮어쓰기는 하지 않음."""
+def apply_plan(plan: list[Move], dest_root: Path, source: str = "manual") -> Path:
+    """계획 실행. 기록(journal) 파일 경로 반환. 덮어쓰기는 하지 않음.
+    source: 'manual'(사용자가 실행) | 'auto'(자동 감시)"""
     dest_root = Path(dest_root)
-    done = []
+    items = []
     for m in plan:
         if m.skip or not m.src.exists():
             continue
@@ -273,34 +274,118 @@ def apply_plan(plan: list[Move], dest_root: Path) -> Path:
         target_dir.mkdir(parents=True, exist_ok=True)
         target = _free_name(target_dir / m.src.name)
         shutil.move(str(m.src), str(target))
-        done.append({"src": str(m.src), "dst": str(target)})
+        items.append({"src": str(m.src), "dst": str(target), "folder": m.dst_folder,
+                      "reason": m.reason, "undone": False})
     jdir = dest_root / JOURNAL_DIR
     jdir.mkdir(parents=True, exist_ok=True)
-    journal = jdir / f"{time.strftime('%Y%m%d_%H%M%S')}.json"
-    journal.write_text(json.dumps(done, ensure_ascii=False, indent=1), encoding="utf-8")
+    stamp = time.strftime("%Y%m%d_%H%M%S")
+    journal, n = jdir / f"{stamp}.json", 1
+    while journal.exists():
+        journal, n = jdir / f"{stamp}_{n}.json", n + 1
+    _write_journal(journal, {"version": 2, "time": time.strftime("%Y-%m-%d %H:%M:%S"),
+                             "source": source, "items": items})
     return journal
 
 
-def undo(journal: Path) -> tuple[int, int]:
-    """journal 기록을 역순으로 원위치. (복구 수, 건너뜀 수) 반환."""
-    entries = json.loads(Path(journal).read_text(encoding="utf-8"))
+def _write_journal(path: Path, data: dict) -> None:
+    Path(path).write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
+
+
+def read_journal(path: Path) -> dict:
+    """기록 파일 읽기. 예전 형식(목록)도 같은 구조로 변환."""
+    path = Path(path)
+    data = json.loads(path.read_text(encoding="utf-8"))
+    if isinstance(data, list):
+        data = {"version": 1, "source": "manual", "items": data,
+                "time": time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(path.stat().st_mtime))}
+    for it in data["items"]:
+        it.setdefault("undone", False)
+        it.setdefault("folder", Path(it["dst"]).parent.name)
+        it.setdefault("reason", "")
+    return data
+
+
+def list_history(dest_root: Path) -> list[dict]:
+    """이동 기록 목록 (최신순). 각 항목: path, time, source, items."""
+    jdir = Path(dest_root) / JOURNAL_DIR
+    out = []
+    for f in sorted(jdir.glob("*.json"), reverse=True) if jdir.is_dir() else []:
+        try:
+            d = read_journal(f)
+        except (ValueError, OSError, KeyError):
+            continue
+        d["path"] = f
+        out.append(d)
+    return out
+
+
+def undo(journal: Path, indices: Optional[Iterable[int]] = None) -> tuple[int, int]:
+    """기록의 파일을 원위치로 되돌림. indices가 없으면 전체. (복구 수, 건너뜀 수) 반환."""
+    data = read_journal(journal)
+    items = data["items"]
+    todo = set(range(len(items))) if indices is None else set(indices)
     ok = skipped = 0
-    for e in reversed(entries):
+    for i in sorted(todo, reverse=True):
+        e = items[i]
+        if e["undone"]:
+            continue
         src, dst = Path(e["src"]), Path(e["dst"])
         if not dst.exists():
             skipped += 1
             continue
         src.parent.mkdir(parents=True, exist_ok=True)
         shutil.move(str(dst), str(_free_name(src)))
+        e["undone"] = True
         ok += 1
         try:  # 비게 된 폴더 정리
             dst.parent.rmdir()
         except OSError:
             pass
+    _write_journal(Path(journal), data)
     return ok, skipped
 
 
 def latest_journal(dest_root: Path) -> Optional[Path]:
-    jdir = Path(dest_root) / JOURNAL_DIR
-    files = sorted(jdir.glob("*.json")) if jdir.is_dir() else []
-    return files[-1] if files else None
+    """아직 되돌리지 않은 파일이 남은 가장 최근 기록."""
+    for h in list_history(dest_root):
+        if any(not it["undone"] for it in h["items"]):
+            return h["path"]
+    return None
+
+
+def stable_files(files: Iterable[Path], min_age: float = 5.0) -> list[Path]:
+    """다운로드/복사 중인 파일을 피하기 위해 마지막 수정 후 min_age초 지난 파일만."""
+    now, out = time.time(), []
+    for f in files:
+        try:
+            if now - f.stat().st_mtime >= min_age:
+                out.append(f)
+        except OSError:
+            continue
+    return out
+
+
+# ---- 앱 상태 저장 (정리 대상 폴더 등) ----
+def state_path() -> Path:
+    return config_path().with_name("state.json")
+
+
+def load_state() -> dict:
+    default_src = Path.home() / "Downloads"
+    st = {"sources": [str(default_src)] if default_src.is_dir() else [],
+          "dest": str(Path.home() / "대학원_정리"), "recursive": False,
+          "auto_watch": False, "use_ai": False}
+    try:
+        st.update(json.loads(state_path().read_text(encoding="utf-8")))
+    except (ValueError, OSError):
+        pass
+    return st
+
+
+def save_state(st: dict) -> None:
+    p = state_path()
+    try:
+        p.parent.mkdir(parents=True, exist_ok=True)
+        p.write_text(json.dumps(st, ensure_ascii=False, indent=2), encoding="utf-8")
+    except OSError:
+        pass

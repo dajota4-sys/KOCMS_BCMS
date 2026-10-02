@@ -2,7 +2,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from organizer.core import (CATEGORIES, apply_plan, build_plan, classify,
+from organizer.core import (list_history, stable_files, read_journal, CATEGORIES, apply_plan, build_plan, classify,
                             latest_journal, sanitize_folder, scan, undo)
 
 
@@ -50,9 +50,40 @@ class CoreTests(unittest.TestCase):
         self.assertEqual((self.dest / CATEGORIES["assignments"] / "hw1.pdf").read_text(), "existing")
         self.assertTrue((self.dest / CATEGORIES["assignments"] / "hw1 (1).pdf").exists())
         self.assertFalse(a.exists())
+        self.assertEqual(latest_journal(self.dest), j)
         self.assertEqual(undo(j), (1, 0))
         self.assertTrue(a.exists())
-        self.assertEqual(latest_journal(self.dest), j)
+        self.assertIsNone(latest_journal(self.dest))  # 모두 되돌림
+        self.assertEqual(undo(j), (0, 0))  # 두 번 되돌려도 안전
+
+    def test_history_and_partial_undo(self):
+        a, b = self.touch("hw1.pdf"), self.touch("arxiv_1.pdf")
+        j = apply_plan(build_plan([a, b], self.dest), self.dest, source="auto")
+        h = list_history(self.dest)
+        self.assertEqual(len(h), 1)
+        self.assertEqual((h[0]["source"], len(h[0]["items"])), ("auto", 2))
+        self.assertEqual(h[0]["items"][0]["folder"], CATEGORIES["assignments"])
+        self.assertEqual(undo(j, indices=[0]), (1, 0))  # 한 파일만 되돌림
+        self.assertTrue(a.exists() and not b.exists())
+        self.assertEqual(sum(it["undone"] for it in read_journal(j)["items"]), 1)
+        self.assertEqual(latest_journal(self.dest), j)  # 아직 남음
+        j2 = apply_plan(build_plan([a], self.dest), self.dest)  # 같은 초에도 덮어쓰지 않음
+        self.assertNotEqual(j, j2)
+
+    def test_legacy_journal(self):
+        import json
+        a = self.touch("hw1.pdf")
+        j = apply_plan(build_plan([a], self.dest), self.dest)
+        data = read_journal(j)["items"]
+        j.write_text(json.dumps([{"src": d["src"], "dst": d["dst"]} for d in data]), encoding="utf-8")
+        self.assertEqual(len(list_history(self.dest)[0]["items"]), 1)
+        self.assertEqual(undo(j), (1, 0))
+
+    def test_stable_files(self):
+        import os, time
+        a, b = self.touch("old.pdf"), self.touch("new.pdf")
+        os.utime(a, (time.time() - 60, time.time() - 60))
+        self.assertEqual(stable_files([a, b], 5), [a])
 
     def test_ai_fallback_creates_new_folder(self):
         f = self.touch("scan0001.pdf")
