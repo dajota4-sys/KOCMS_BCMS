@@ -1,7 +1,9 @@
 """분류 규칙, 이동 계획, 실행/되돌리기 로직 (GUI와 무관)."""
 from __future__ import annotations
 
+import copy
 import json
+import os
 import re
 import shutil
 import time
@@ -58,6 +60,65 @@ SKIP_DIRS = {"$recycle.bin", "system volume information", "windows", "program fi
 PROJECT_MARKERS = {".git", "pyproject.toml", "package.json", "requirements.txt",
                    "setup.py", "Makefile", "CMakeLists.txt", ".Rproj"}
 JOURNAL_DIR = ".organizer_journal"
+
+# ---- 사용자 설정 (메모장으로 편집 가능한 JSON) ----
+_DEFAULTS = {
+    "categories": copy.deepcopy(CATEGORIES),
+    "keywords": {k: v for k, v in KEYWORD_RULES},
+    "extensions": {k: sorted(v) for k, v in EXT_RULES.items()},
+}
+
+
+def config_path() -> Path:
+    env = os.environ.get("AIFOLDER_CONFIG")
+    if env:
+        return Path(env)
+    base = os.environ.get("APPDATA") or str(Path.home() / ".config")
+    return Path(base) / "AIFolderOrganizer" / "config.json"
+
+
+def ensure_config(path: Optional[Path] = None) -> Path:
+    """설정 파일이 없으면 기본값으로 생성하고 경로를 반환."""
+    path = Path(path) if path else config_path()
+    if not path.exists():
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(_DEFAULTS, ensure_ascii=False, indent=2), encoding="utf-8")
+    return path
+
+
+def load_config(path: Optional[Path] = None) -> list[str]:
+    """설정 파일을 읽어 분류 규칙에 반영(없으면 기본값). 오류 메시지 목록 반환."""
+    path = Path(path) if path else config_path()
+    errors: list[str] = []
+    cfg = copy.deepcopy(_DEFAULTS)
+    if path.exists():
+        try:
+            user = json.loads(path.read_text(encoding="utf-8"))
+            for sect in cfg:
+                if isinstance(user.get(sect), dict):
+                    cfg[sect] = user[sect]
+        except (ValueError, OSError) as e:
+            errors.append(f"설정 파일을 읽을 수 없어 기본값을 사용합니다: {e}")
+    CATEGORIES.clear()
+    CATEGORIES.update({k: str(v) for k, v in cfg["categories"].items()})
+    CATEGORIES.setdefault("misc", "99_미분류")
+    KEYWORD_RULES.clear()
+    for key, pat in cfg["keywords"].items():
+        try:
+            re.compile(pat)
+        except re.error as e:
+            errors.append(f"키워드 '{key}' 정규식 오류(무시됨): {e}")
+            continue
+        if key in CATEGORIES:
+            KEYWORD_RULES.append((key, pat))
+        else:
+            errors.append(f"키워드 '{key}'는 categories에 없어 무시됩니다")
+    EXT_RULES.clear()
+    for key, exts in cfg["extensions"].items():
+        if key in CATEGORIES and isinstance(exts, list):
+            EXT_RULES[key] = {str(e).lower() for e in exts}
+    return errors
+
 
 _INVALID = re.compile(r'[<>:"|?*\x00-\x1f]')
 

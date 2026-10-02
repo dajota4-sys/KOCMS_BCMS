@@ -7,7 +7,7 @@ import sys
 from pathlib import Path
 
 from . import ai as ai_mod
-from .core import apply_plan, build_plan, latest_journal, scan, undo
+from .core import apply_plan, build_plan, ensure_config, latest_journal, load_config, scan, undo
 
 
 def main(argv=None) -> int:
@@ -22,6 +22,7 @@ def main(argv=None) -> int:
     s.add_argument("--apply", action="store_true", help="실제로 이동 (없으면 미리보기)")
     u = sub.add_parser("undo", help="마지막 정리 되돌리기")
     u.add_argument("--dest", type=Path, required=True)
+    sub.add_parser("config", help="분류 규칙 설정 파일 위치 출력/생성")
     sub.add_parser("gui", help="드래그&드롭 창 열기")
     a = p.parse_args(argv)
 
@@ -29,6 +30,11 @@ def main(argv=None) -> int:
         from .gui import run
         run()
         return 0
+    if a.cmd == "config":
+        print(ensure_config())
+        return 0
+    for err in load_config():
+        print("!", err, file=sys.stderr)
     if a.cmd == "undo":
         j = latest_journal(a.dest)
         if not j:

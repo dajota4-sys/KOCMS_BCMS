@@ -7,8 +7,12 @@ from pathlib import Path
 from tkinter import filedialog, messagebox, simpledialog, ttk
 
 from . import ai as ai_mod
-from .core import (CATEGORIES, Move, apply_plan, build_plan, latest_journal,
-                   sanitize_folder, scan, undo)
+import os
+import subprocess
+import sys
+
+from .core import (Move, apply_plan, build_plan, ensure_config, latest_journal,
+                   load_config, sanitize_folder, scan, undo)
 
 try:
     from tkinterdnd2 import DND_FILES, TkinterDnD
@@ -26,6 +30,7 @@ class App:
         self.use_ai = tk.BooleanVar(value=ai_mod.available())
         self.recursive = tk.BooleanVar(value=False)
         self.plan: list[Move] = []
+        load_config()
 
         top = ttk.Frame(self.root, padding=8)
         top.pack(fill="x")
@@ -60,6 +65,8 @@ class App:
         ttk.Button(bar, text="파일 추가", command=self.pick_files).pack(side="left")
         ttk.Button(bar, text="폴더 추가", command=self.pick_folder).pack(side="left", padx=4)
         ttk.Button(bar, text="선택 제외", command=self.exclude).pack(side="left")
+        ttk.Button(bar, text="규칙 편집", command=self.edit_rules).pack(side="left", padx=4)
+        ttk.Button(bar, text="규칙 새로고침", command=self.reload_rules).pack(side="left")
         ttk.Button(bar, text="되돌리기", command=self.undo_last).pack(side="right")
         ttk.Button(bar, text="정리 실행", command=self.apply).pack(side="right", padx=4)
         self.status = ttk.Label(self.root, text="준비됨 (먼저 미리보기만 표시되며, 실행 전에는 아무것도 옮기지 않습니다)")
@@ -108,6 +115,21 @@ class App:
         for i, m in enumerate(self.plan):
             self.tree.insert("", "end", iid=str(i), values=(m.src.name, m.dst_folder, m.reason))
         self.status.config(text=f"{len(self.plan)}개 파일 분류됨 - 확인 후 '정리 실행'")
+
+    # --- 규칙 설정 ---
+    def edit_rules(self):
+        path = ensure_config()
+        if sys.platform == "win32":
+            os.startfile(path)  # 메모장 등 기본 편집기로 열기
+        else:
+            subprocess.Popen(["xdg-open", str(path)])
+        self.status.config(text="저장 후 '규칙 새로고침'을 누르세요: " + str(path))
+
+    def reload_rules(self):
+        errs = load_config()
+        if errs:
+            messagebox.showwarning("규칙 오류", "\n".join(errs))
+        self.status.config(text="규칙을 다시 불러왔습니다. 파일을 다시 끌어놓으면 새 규칙이 적용됩니다.")
 
     # --- 편집/실행 ---
     def edit_folder(self, _):

@@ -67,3 +67,29 @@ class CoreTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class ConfigTests(unittest.TestCase):
+    def tearDown(self):
+        from organizer.core import load_config
+        load_config(Path("/nonexistent.json"))  # 기본값 복원
+
+    def test_custom_config(self):
+        import json
+        from organizer.core import load_config
+        p = Path(tempfile.mkdtemp()) / "c.json"
+        p.write_text(json.dumps({
+            "categories": {"papers": "A_논문", "mycls": "Z_내수업", "misc": "기타"},
+            "keywords": {"mycls": "bayes|베이지안", "bad": "x", "papers": "(["},
+        }, ensure_ascii=False), encoding="utf-8")
+        errs = load_config(p)
+        self.assertEqual(len(errs), 2)  # 없는 카테고리 + 잘못된 정규식
+        self.assertEqual(classify(Path("베이지안_노트.pdf"))[0], "Z_내수업")
+        self.assertEqual(classify(Path("zzz.pdf"))[0], None)
+
+    def test_broken_json_falls_back(self):
+        from organizer.core import load_config
+        p = Path(tempfile.mkdtemp()) / "c.json"
+        p.write_text("{oops", encoding="utf-8")
+        self.assertEqual(len(load_config(p)), 1)
+        self.assertEqual(classify(Path("hw1.pdf"))[0], CATEGORIES["assignments"])
