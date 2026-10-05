@@ -38,6 +38,7 @@ class App:
         self.auto_watch = tk.BooleanVar(value=False)  # 안전을 위해 항상 꺼진 상태로 시작
         self.use_ai = tk.BooleanVar(value=st["use_ai"] and ai_mod.available())
         self.search = tk.StringVar()
+        self.show_undone = tk.BooleanVar(value=False)  # 되돌린 항목은 기본적으로 기록에서 숨김
         self.plan: list[Move] = []
         self.extra: list[Path] = []          # 드래그로 추가한 1회성 파일/폴더
         self.overrides: dict[Path, tuple[str, bool]] = {}  # 사용자가 고친 폴더/제외
@@ -132,6 +133,8 @@ class App:
         e = ttk.Entry(row, textvariable=self.search)
         e.pack(side="left", fill="x", expand=True, padx=4)
         self.search.trace_add("write", lambda *_: self.refresh_history())
+        ttk.Checkbutton(row, text="되돌린 항목도 보기", variable=self.show_undone,
+                        command=self.refresh_history).pack(side="left", padx=4)
         ttk.Button(row, text="새로고침", command=self.refresh_history).pack(side="left")
 
         cols = ("a", "b", "c")
@@ -378,17 +381,21 @@ class App:
         q = self.search.get().strip().lower()
         self.hist_data = list_history(Path(self.dest.get()))
         self.hist.delete(*self.hist.get_children())
+        show = self.show_undone.get()
         for ri, h in enumerate(self.hist_data):
             rows = [(i, it) for i, it in enumerate(h["items"])
-                    if not q or q in Path(it["dst"]).name.lower() or q in it["folder"].lower()
-                    or q in h["time"]]
+                    if (show or not it["undone"])  # 되돌린 항목은 기록에서 제외(옵션으로 표시)
+                    and (not q or q in Path(it["dst"]).name.lower() or q in it["folder"].lower()
+                         or q in h["time"])]
             if not rows:
                 continue
+            total = len(h["items"])
             undone = sum(it["undone"] for it in h["items"])
-            state = "전체 되돌림" if undone == len(h["items"]) else (f"{undone}개 되돌림" if undone else "")
             kind = "자동" if h.get("source") == "auto" else "수동"
+            count = f"{total - undone}개" if not show else f"{total}개"
+            state = f"{undone}개 되돌림" if show and undone else ""
             self.hist.insert("", "end", iid=f"r{ri}", text=h["time"], open=bool(q),
-                             values=("", f"{kind} · {len(h['items'])}개", state))
+                             values=("", f"{kind} · {count}", state))
             for i, it in rows:
                 self.hist.insert(f"r{ri}", "end", iid=f"r{ri}:{i}", text=Path(it["dst"]).name,
                                  values=(it["folder"], "", "되돌림" if it["undone"] else ""))

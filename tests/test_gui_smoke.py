@@ -113,6 +113,25 @@ class GuiSmoke(unittest.TestCase):
         self.assertFalse((self.src / "HW1.pdf").exists())
         self.assertTrue((self.src / "arxiv_1.pdf").exists())  # 포함 안 한 파일은 그대로
 
+    def test_undone_items_disappear_from_history(self):
+        a = self._auto_then()
+        a.refresh_history()
+        run = a.hist.get_children()[0]
+        self.assertEqual(len(a.hist.get_children(run)), 2)
+        a.hist.selection_set(a.hist.get_children(run)[0])  # 파일 하나만 되돌림
+        a.undo_selected()
+        self.pump()
+        self.assertEqual(len(a.hist.get_children(run)), 1)           # 기록에서 사라짐
+        self.assertIn("1개", a.hist.item(run, "values")[1])
+        a.show_undone.set(True)                                       # 옵션을 켜면 다시 표시
+        a.refresh_history()
+        self.assertEqual(len(a.hist.get_children(a.hist.get_children()[0])), 2)
+        a.show_undone.set(False)
+        a.hist.selection_set(a.hist.get_children()[0])                # 나머지도 되돌리면 날짜 줄도 사라짐
+        a.undo_selected()
+        self.pump()
+        self.assertEqual(len(a.hist.get_children()), 0)
+
 
 if __name__ == "__main__":
     unittest.main()
