@@ -12,8 +12,8 @@ from pathlib import Path
 from tkinter import filedialog, messagebox, simpledialog, ttk
 
 from . import ai as ai_mod
-from .core import (Move, apply_plan, build_plan, ensure_config, list_history,
-                   load_config, load_state, sanitize_folder, save_state, scan,
+from .core import (Move, apply_plan, build_plan, ensure_config, latest_journal,
+                   list_history, load_config, load_state, sanitize_folder, save_state, scan,
                    stable_files, undo)
 
 try:
@@ -41,6 +41,8 @@ class App:
         self.plan: list[Move] = []
         self.extra: list[Path] = []          # 드래그로 추가한 1회성 파일/폴더
         self.overrides: dict[Path, tuple[str, bool]] = {}  # 사용자가 고친 폴더/제외
+        # 되돌린 파일: 다시 자동으로 옮겨지지 않도록 기억 (다음 실행 때도 유지)
+        self.rejected: set[str] = set(st.get("rejected", []))
         self.last_key: tuple = ()
         self.busy = False
         self.q: queue.Queue = queue.Queue()
@@ -115,9 +117,11 @@ class App:
         ttk.Button(bar2, text="지금 새로 읽기", command=lambda: self.refresh(force=True)).pack(side="left")
         ttk.Button(bar2, text="파일 추가", command=self.pick_files).pack(side="left", padx=4)
         ttk.Button(bar2, text="선택 제외", command=self.exclude).pack(side="left")
+        ttk.Button(bar2, text="선택 다시 포함", command=self.include).pack(side="left", padx=4)
         ttk.Button(bar2, text="규칙 편집", command=self.edit_rules).pack(side="left", padx=4)
         ttk.Button(bar2, text="규칙 새로고침", command=self.reload_rules).pack(side="left")
         ttk.Button(bar2, text="전체 정리 실행", command=self.apply).pack(side="right")
+        ttk.Button(bar2, text="마지막 정리 되돌리기", command=self.undo_last).pack(side="right", padx=4)
 
     def _build_history_tab(self):
         tab = ttk.Frame(self.nb)
@@ -145,13 +149,15 @@ class App:
         row2.pack(fill="x", pady=4)
         ttk.Label(row2, text="날짜 줄 선택 = 그때 정리한 전체 / 파일 줄 선택 = 그 파일만").pack(side="left")
         ttk.Button(row2, text="선택 되돌리기", command=self.undo_selected).pack(side="right")
+        ttk.Button(row2, text="마지막 정리 되돌리기", command=self.undo_last).pack(side="right", padx=4)
         ttk.Button(row2, text="저장 폴더 열기", command=self.open_dest).pack(side="right", padx=4)
         self.hist_data: list[dict] = []
 
     # ---------- 설정/상태 ----------
     def _save(self):
         save_state({"sources": self.sources, "dest": self.dest.get(), "recursive": self.recursive.get(),
-                    "use_ai": self.use_ai.get(), "auto_watch": False})
+                    "use_ai": self.use_ai.get(), "auto_watch": False,
+                    "rejected": sorted(self.rejected)[-2000:]})
 
     def _refresh_src_list(self):
         self.src_list.delete(0, "end")
@@ -239,7 +245,9 @@ class App:
         for m in plan:
             if m.src in self.overrides:
                 m.dst_folder, m.skip = self.overrides[m.src]
-                m.reason = "직접 지정" if not m.skip else ""
+                m.reason = "직접 지정" if not m.skip else "직접 제외"
+            elif str(m.src) in self.rejected:
+                m.skip, m.reason = True, "되돌린 파일 - 자동 정리 제외"
         self.plan = plan
         self._fill_tree()
         self.status.config(text=self._summary())
@@ -254,7 +262,7 @@ class App:
         for i, m in enumerate(self.plan):
             folder = "(제외)" if m.skip else m.dst_folder
             self.tree.insert("", "end", iid=str(i),
-                             values=(m.src.name, folder, "" if m.skip else m.reason, str(m.src.parent)))
+                             values=(m.src.name, folder, m.reason, str(m.src.parent)))
 
     def pick_files(self):
         self.add_extra(self.root.tk.splitlist(filedialog.askopenfilenames()))
@@ -276,15 +284,25 @@ class App:
         if new:
             m.dst_folder, m.skip, m.reason = sanitize_folder(new), False, "직접 지정"
             self.overrides[m.src] = (m.dst_folder, False)
+            self.rejected.discard(str(m.src))
             self._fill_tree()
 
     def exclude(self):
         for iid in self.tree.selection():
             m = self.plan[int(iid)]
-            m.skip = True
+            m.skip, m.reason = True, "직접 제외"
             self.overrides[m.src] = (m.dst_folder, True)
         self._fill_tree()
         self.status.config(text=self._summary())
+
+    def include(self):
+        """제외/되돌림 표시된 파일을 다시 정리 대상으로 복귀."""
+        for iid in self.tree.selection():
+            src = self.plan[int(iid)].src
+            self.overrides.pop(src, None)
+            self.rejected.discard(str(src))
+        self._save()
+        self.refresh(force=True)
 
     def apply(self):
         todo = [m for m in self.plan if not m.skip]
@@ -328,12 +346,13 @@ class App:
         self.busy = True
         targets, dest = self._targets(), Path(self.dest.get())
         rec, use_ai = self.recursive.get(), self.use_ai.get()
+        rejected = {Path(p) for p in self.rejected}  # 되돌린 파일은 다시 옮기지 않음
 
         def work():
             try:
                 files = stable_files(scan(targets, dest, rec))
                 clf = ai_mod.ClaudeClassifier() if use_ai and ai_mod.available() else None
-                excluded = {p for p, (_, skip) in self.overrides.items() if skip}  # 사용자가 제외한 파일
+                excluded = rejected | {p for p, (_, skip) in self.overrides.items() if skip}  # 되돌림/제외 파일
                 plan = [m for m in build_plan(files, dest, clf)
                         if m.source != "fallback" and m.src not in excluded]
                 if plan:
@@ -384,17 +403,40 @@ class App:
             else:
                 runs[int(iid[1:])] = None  # 날짜 줄 = 전체
         if not runs:
-            messagebox.showinfo("되돌리기", "되돌릴 항목(날짜 줄 또는 파일 줄)을 선택하세요.")
+            messagebox.showinfo("되돌리기", "되돌릴 항목(날짜 줄 또는 파일 줄)을 선택하거나,\n"
+                                          "'마지막 정리 되돌리기' 버튼을 누르세요.")
             return
-        if not messagebox.askyesno("확인", "선택한 항목을 원래 위치로 되돌릴까요?"):
+        if messagebox.askyesno("확인", "선택한 항목을 원래 위치로 되돌릴까요?"):
+            self._do_undo([(self.hist_data[r]["path"], idx) for r, idx in runs.items()])
+
+    def undo_last(self):
+        j = latest_journal(Path(self.dest.get()))
+        if not j:
+            messagebox.showinfo("되돌리기", "되돌릴 이동 기록이 없습니다.")
             return
+        if messagebox.askyesno("확인", "가장 최근에 정리한 파일 전체를 원래 위치로 되돌릴까요?"):
+            self._do_undo([(j, None)])
+
+    def _do_undo(self, jobs):
         ok = skipped = 0
-        for r, idx in runs.items():
-            o, s = undo(self.hist_data[r]["path"], idx)
-            ok, skipped = ok + o, skipped + s
+        restored: list[Path] = []
+        try:
+            for path, idx in jobs:
+                o, s = undo(path, idx, restored)
+                ok, skipped = ok + o, skipped + s
+        except OSError as e:  # 파일이 열려 있거나 권한 문제 등
+            messagebox.showerror("되돌리기 오류", f"일부 파일을 되돌리지 못했습니다:\n{e}")
+        # 되돌린 파일이 자동 정리로 다시 옮겨지지 않도록 기억
+        self.rejected.update(str(p) for p in restored)
+        self._save()
         self.refresh_history()
         self.refresh(force=True)
-        self.status.config(text=f"{ok}개 원위치, {skipped}개 건너뜀(파일이 이미 없거나 옮겨짐)")
+        msg = f"{ok}개 원위치"
+        if skipped:
+            msg += f", {skipped}개 건너뜀(파일이 이미 없거나 옮겨짐)"
+        if ok:
+            msg += " - 되돌린 파일은 자동 정리에서 제외됩니다 ('정리' 탭의 '선택 다시 포함'으로 해제)"
+        self.status.config(text=msg)
 
     def open_dest(self):
         d = Path(self.dest.get())

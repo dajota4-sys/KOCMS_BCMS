@@ -72,6 +72,47 @@ class GuiSmoke(unittest.TestCase):
         self.pump()
         self.assertEqual(sum((self.src / n).exists() for n in ("HW1.pdf", "arxiv_1.pdf")), 1)
 
+    def _auto_then(self):
+        import tkinter.messagebox as mb
+        mb.askyesno = lambda *x, **k: True
+        mb.showinfo = lambda *x, **k: None
+        a = self.app
+        self.pump()
+        a.auto_watch.set(True)
+        a._auto_move()
+        self.pump()
+        self.assertFalse((self.src / "HW1.pdf").exists())
+        return a
+
+    def test_undo_last_is_not_redone_by_auto_watch(self):
+        """회귀: 되돌린 파일을 자동 정리가 다시 옮겨 '되돌리기가 안 되는' 것처럼 보이던 문제."""
+        a = self._auto_then()
+        a.undo_last()
+        self.pump()
+        self.assertTrue((self.src / "HW1.pdf").exists() and (self.src / "arxiv_1.pdf").exists())
+        for _ in range(2):  # 자동 정리 주기가 몇 번 돌아도 그대로여야 함
+            a._auto_move()
+            self.pump()
+        self.assertTrue((self.src / "HW1.pdf").exists() and (self.src / "arxiv_1.pdf").exists())
+        reasons = {m.src.name: m.reason for m in a.plan}
+        self.assertIn("되돌린", reasons["HW1.pdf"])
+
+    def test_undo_whole_run_row_and_include_again(self):
+        a = self._auto_then()
+        a.refresh_history()
+        a.hist.selection_set(a.hist.get_children()[0])  # 날짜 줄 = 전체
+        a.undo_selected()
+        self.pump()
+        self.assertTrue((self.src / "HW1.pdf").exists())
+        # '선택 다시 포함' 하면 다시 자동 정리 대상이 됨
+        a.tree.selection_set([i for i, m in enumerate(a.plan) if m.src.name == "HW1.pdf"][0].__str__())
+        a.include()
+        self.pump()
+        a._auto_move()
+        self.pump()
+        self.assertFalse((self.src / "HW1.pdf").exists())
+        self.assertTrue((self.src / "arxiv_1.pdf").exists())  # 포함 안 한 파일은 그대로
+
 
 if __name__ == "__main__":
     unittest.main()

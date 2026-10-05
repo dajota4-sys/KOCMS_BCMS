@@ -70,6 +70,13 @@ class CoreTests(unittest.TestCase):
         j2 = apply_plan(build_plan([a], self.dest), self.dest)  # 같은 초에도 덮어쓰지 않음
         self.assertNotEqual(j, j2)
 
+    def test_undo_reports_restored_paths(self):
+        a = self.touch("hw1.pdf")
+        j = apply_plan(build_plan([a], self.dest), self.dest)
+        restored = []
+        undo(j, restored=restored)
+        self.assertEqual(restored, [a])
+
     def test_legacy_journal(self):
         import json
         a = self.touch("hw1.pdf")

@@ -319,8 +319,10 @@ def list_history(dest_root: Path) -> list[dict]:
     return out
 
 
-def undo(journal: Path, indices: Optional[Iterable[int]] = None) -> tuple[int, int]:
-    """기록의 파일을 원위치로 되돌림. indices가 없으면 전체. (복구 수, 건너뜀 수) 반환."""
+def undo(journal: Path, indices: Optional[Iterable[int]] = None,
+         restored: Optional[list] = None) -> tuple[int, int]:
+    """기록의 파일을 원위치로 되돌림. indices가 없으면 전체. (복구 수, 건너뜀 수) 반환.
+    restored 리스트를 넘기면 복구된 파일의 최종 경로를 채워준다."""
     data = read_journal(journal)
     items = data["items"]
     todo = set(range(len(items))) if indices is None else set(indices)
@@ -334,9 +336,12 @@ def undo(journal: Path, indices: Optional[Iterable[int]] = None) -> tuple[int, i
             skipped += 1
             continue
         src.parent.mkdir(parents=True, exist_ok=True)
-        shutil.move(str(dst), str(_free_name(src)))
+        final = _free_name(src)
+        shutil.move(str(dst), str(final))
         e["undone"] = True
         ok += 1
+        if restored is not None:
+            restored.append(final)
         try:  # 비게 된 폴더 정리
             dst.parent.rmdir()
         except OSError:
