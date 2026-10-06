@@ -4,6 +4,8 @@
 > - **[A]** Arias-Aranda et al. (2026), *Business Continuity Management—Identifying Relevant Processes for a Reference Model*, Applied Sciences 16, 3219 (이하 Arias)
 > - **[B]** Białas (2010), *Ontological approach to the business continuity management system development* (이하 Białas)
 >
+> 엑셀 문항은행: `BCMS_연계성_문항은행_온톨로지.xlsx` / 온톨로지 맵 그림: `BCMS_온톨로지맵.png` (같은 폴더)
+>
 > 한 줄 요약: **온톨로지는 "무엇과 무엇의 연결을 측정하는가"를 정하고, 설문은 "그 연결이 조직에서 어느 정도 유지되는가"를 측정한다.**
 
 ---
@@ -116,7 +118,7 @@ CQ = Białas식 competency question (온톨로지·지식베이스가 답할 수
 |---|---|---|---|---|---|
 | L22 | 핵심 프로세스 → COM | informs | "outcomes of nearly all BCMS processes are communicated… to stakeholders… as part of the consultation and communication process" (p.16) | A | 이해관계자에게 전달된 BCMS 결과는? |
 | L23 | COM → GOV | informs | "These reports and identified requirements serve as inputs for the BC governance process" (p.16) | A | 경영진 검토에 입력된 보고는 무엇인가? |
-| L24 | GOV ↔ POL | derivesFrom | GOV는 목표·요구 일치 보장 (p.14), POL은 "development, maintenance… of BC policies" (pp.14–15), Białas `hasBCpolicy`, `hasBCobjectives` | B | 정책이 반영한 경영진 목표는? |
+| L24 | GOV → POL | derivesFrom | GOV는 목표·요구 일치 보장 (p.14), POL은 "development, maintenance… of BC policies" (pp.14–15), Białas `hasBCpolicy`, `hasBCobjectives` | B | 정책이 반영한 경영진 목표는? |
 | L25 | RES → 핵심 프로세스/CRM | informs | RES 산출물: "reports on resource utilization for core BCMS processes and the customer relationship management process" (p.16) | A | 자원 사용 보고를 받아 쓰는 프로세스는? |
 
 > **한계(중요)**: Arias의 전문가 설문(n=39)은 **프로세스가 BCMS 핵심인지**를 검증했을 뿐, **프로세스 간 연결 자체**를 검증하지는 않았다. 위 25개 연결은 논문 서술에서 추출한 것이므로 **§6의 전문가 검증 전에는 "가설적 연결"**이다. 또한 Białas는 BS 25999 기반의 **프로토타입**이며(저자도 실데이터 검증이 필요하다고 언급), 관계 이름(`informs` 등)은 두 논문에 없는 **본 문서의 제안**이다.
