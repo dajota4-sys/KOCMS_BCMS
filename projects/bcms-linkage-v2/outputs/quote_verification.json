@@ -1,0 +1,554 @@
+{
+ "date": "2026-10-06",
+ "pdf_sha256": {
+  "Arias": "d9fc2a3c7a490e0c9dc3dc442a8b771cb481e59d0b5e2db2dc772c79608f144e",
+  "Białas": "b298d8eccf6b1a57183c1b8e40480af2c953e9b057ef6bacc6f769751d4a7f51"
+ },
+ "quotes_total": 64,
+ "quotes_ok": 64,
+ "objects_total": 22,
+ "objects_ok": 22,
+ "failures": [],
+ "quotes": [
+  {
+   "id": "A01",
+   "source": "Arias",
+   "pages": "4",
+   "ok": true
+  },
+  {
+   "id": "A02",
+   "source": "Arias",
+   "pages": "5",
+   "ok": true
+  },
+  {
+   "id": "A03",
+   "source": "Arias",
+   "pages": "3",
+   "ok": true
+  },
+  {
+   "id": "A04",
+   "source": "Arias",
+   "pages": "6",
+   "ok": true
+  },
+  {
+   "id": "A05",
+   "source": "Arias",
+   "pages": "2",
+   "ok": true
+  },
+  {
+   "id": "A06",
+   "source": "Arias",
+   "pages": "3-4",
+   "ok": true
+  },
+  {
+   "id": "A07",
+   "source": "Arias",
+   "pages": "18",
+   "ok": true
+  },
+  {
+   "id": "A08",
+   "source": "Arias",
+   "pages": "17",
+   "ok": true
+  },
+  {
+   "id": "A09",
+   "source": "Arias",
+   "pages": "10",
+   "ok": true
+  },
+  {
+   "id": "A10",
+   "source": "Arias",
+   "pages": "10",
+   "ok": true
+  },
+  {
+   "id": "A11",
+   "source": "Arias",
+   "pages": "15",
+   "ok": true
+  },
+  {
+   "id": "A12",
+   "source": "Arias",
+   "pages": "15",
+   "ok": true
+  },
+  {
+   "id": "A13",
+   "source": "Arias",
+   "pages": "15",
+   "ok": true
+  },
+  {
+   "id": "A14",
+   "source": "Arias",
+   "pages": "15",
+   "ok": true
+  },
+  {
+   "id": "A15",
+   "source": "Arias",
+   "pages": "15",
+   "ok": true
+  },
+  {
+   "id": "A16",
+   "source": "Arias",
+   "pages": "15",
+   "ok": true
+  },
+  {
+   "id": "A17",
+   "source": "Arias",
+   "pages": "15",
+   "ok": true
+  },
+  {
+   "id": "A18",
+   "source": "Arias",
+   "pages": "16",
+   "ok": true
+  },
+  {
+   "id": "A19",
+   "source": "Arias",
+   "pages": "15",
+   "ok": true
+  },
+  {
+   "id": "A20",
+   "source": "Arias",
+   "pages": "15",
+   "ok": true
+  },
+  {
+   "id": "A21",
+   "source": "Arias",
+   "pages": "15",
+   "ok": true
+  },
+  {
+   "id": "A22",
+   "source": "Arias",
+   "pages": "15",
+   "ok": true
+  },
+  {
+   "id": "A23",
+   "source": "Arias",
+   "pages": "15",
+   "ok": true
+  },
+  {
+   "id": "A24",
+   "source": "Arias",
+   "pages": "15",
+   "ok": true
+  },
+  {
+   "id": "A25",
+   "source": "Arias",
+   "pages": "16",
+   "ok": true
+  },
+  {
+   "id": "A26",
+   "source": "Arias",
+   "pages": "16",
+   "ok": true
+  },
+  {
+   "id": "A27",
+   "source": "Arias",
+   "pages": "16",
+   "ok": true
+  },
+  {
+   "id": "A28",
+   "source": "Arias",
+   "pages": "16",
+   "ok": true
+  },
+  {
+   "id": "A29",
+   "source": "Arias",
+   "pages": "16",
+   "ok": true
+  },
+  {
+   "id": "A30",
+   "source": "Arias",
+   "pages": "16",
+   "ok": true
+  },
+  {
+   "id": "A31",
+   "source": "Arias",
+   "pages": "16",
+   "ok": true
+  },
+  {
+   "id": "A32",
+   "source": "Arias",
+   "pages": "16",
+   "ok": true
+  },
+  {
+   "id": "A33",
+   "source": "Arias",
+   "pages": "14",
+   "ok": true
+  },
+  {
+   "id": "A34",
+   "source": "Arias",
+   "pages": "14",
+   "ok": true
+  },
+  {
+   "id": "A35",
+   "source": "Arias",
+   "pages": "15",
+   "ok": true
+  },
+  {
+   "id": "A36",
+   "source": "Arias",
+   "pages": "15",
+   "ok": true
+  },
+  {
+   "id": "A37",
+   "source": "Arias",
+   "pages": "15",
+   "ok": true
+  },
+  {
+   "id": "A38",
+   "source": "Arias",
+   "pages": "16",
+   "ok": true
+  },
+  {
+   "id": "A39",
+   "source": "Arias",
+   "pages": "16",
+   "ok": true
+  },
+  {
+   "id": "A40",
+   "source": "Arias",
+   "pages": "16",
+   "ok": true
+  },
+  {
+   "id": "A41",
+   "source": "Arias",
+   "pages": "16",
+   "ok": true
+  },
+  {
+   "id": "A42",
+   "source": "Arias",
+   "pages": "4",
+   "ok": true
+  },
+  {
+   "id": "A43",
+   "source": "Arias",
+   "pages": "11",
+   "ok": true
+  },
+  {
+   "id": "A44",
+   "source": "Arias",
+   "pages": "11",
+   "ok": true
+  },
+  {
+   "id": "A45",
+   "source": "Arias",
+   "pages": "12",
+   "ok": true
+  },
+  {
+   "id": "A46",
+   "source": "Arias",
+   "pages": "16",
+   "ok": true
+  },
+  {
+   "id": "A47",
+   "source": "Arias",
+   "pages": "16",
+   "ok": true
+  },
+  {
+   "id": "A48",
+   "source": "Arias",
+   "pages": "10",
+   "ok": true
+  },
+  {
+   "id": "B01",
+   "source": "Białas",
+   "pages": "1",
+   "ok": true
+  },
+  {
+   "id": "B02",
+   "source": "Białas",
+   "pages": "2",
+   "ok": true
+  },
+  {
+   "id": "B03",
+   "source": "Białas",
+   "pages": "2",
+   "ok": true
+  },
+  {
+   "id": "B04",
+   "source": "Białas",
+   "pages": "3",
+   "ok": true
+  },
+  {
+   "id": "B05",
+   "source": "Białas",
+   "pages": "3",
+   "ok": true
+  },
+  {
+   "id": "B06",
+   "source": "Białas",
+   "pages": "3",
+   "ok": true
+  },
+  {
+   "id": "B07",
+   "source": "Białas",
+   "pages": "3",
+   "ok": true
+  },
+  {
+   "id": "B08",
+   "source": "Białas",
+   "pages": "3",
+   "ok": true
+  },
+  {
+   "id": "B09",
+   "source": "Białas",
+   "pages": "2",
+   "ok": true
+  },
+  {
+   "id": "B10",
+   "source": "Białas",
+   "pages": "6",
+   "ok": true
+  },
+  {
+   "id": "B11",
+   "source": "Białas",
+   "pages": "6",
+   "ok": true
+  },
+  {
+   "id": "B12",
+   "source": "Białas",
+   "pages": "5",
+   "ok": true
+  },
+  {
+   "id": "B13",
+   "source": "Białas",
+   "pages": "4-5",
+   "ok": true
+  },
+  {
+   "id": "B14",
+   "source": "Białas",
+   "pages": "6",
+   "ok": true
+  },
+  {
+   "id": "B15",
+   "source": "Białas",
+   "pages": "1",
+   "ok": true
+  },
+  {
+   "id": "B16",
+   "source": "Białas",
+   "pages": "4",
+   "ok": true
+  }
+ ],
+ "objects": [
+  {
+   "id": "GOV",
+   "name_ok": true,
+   "pct_in_paper": 90,
+   "pct_in_data": 90,
+   "pct_ok": true
+  },
+  {
+   "id": "POL",
+   "name_ok": true,
+   "pct_in_paper": 87,
+   "pct_in_data": 87,
+   "pct_ok": true
+  },
+  {
+   "id": "REQ",
+   "name_ok": true,
+   "pct_in_paper": 74,
+   "pct_in_data": 74,
+   "pct_ok": true
+  },
+  {
+   "id": "BIA",
+   "name_ok": true,
+   "pct_in_paper": 100,
+   "pct_in_data": 100,
+   "pct_ok": true
+  },
+  {
+   "id": "RA",
+   "name_ok": true,
+   "pct_in_paper": 90,
+   "pct_in_data": 90,
+   "pct_ok": true
+  },
+  {
+   "id": "STR",
+   "name_ok": true,
+   "pct_in_paper": 74,
+   "pct_in_data": 74,
+   "pct_ok": true
+  },
+  {
+   "id": "PLAN",
+   "name_ok": true,
+   "pct_in_paper": 69,
+   "pct_in_data": 69,
+   "pct_ok": true
+  },
+  {
+   "id": "IMP",
+   "name_ok": true,
+   "pct_in_paper": 69,
+   "pct_in_data": 69,
+   "pct_ok": true
+  },
+  {
+   "id": "INC",
+   "name_ok": true,
+   "pct_in_paper": 100,
+   "pct_in_data": 100,
+   "pct_ok": true
+  },
+  {
+   "id": "EXE",
+   "name_ok": true,
+   "pct_in_paper": 100,
+   "pct_in_data": 100,
+   "pct_ok": true
+  },
+  {
+   "id": "AWR",
+   "name_ok": true,
+   "pct_in_paper": 95,
+   "pct_in_data": 95,
+   "pct_ok": true
+  },
+  {
+   "id": "SUP",
+   "name_ok": true,
+   "pct_in_paper": 90,
+   "pct_in_data": 90,
+   "pct_ok": true
+  },
+  {
+   "id": "AUD",
+   "name_ok": true,
+   "pct_in_paper": 97,
+   "pct_in_data": 97,
+   "pct_ok": true
+  },
+  {
+   "id": "PERF",
+   "name_ok": true,
+   "pct_in_paper": 87,
+   "pct_in_data": 87,
+   "pct_ok": true
+  },
+  {
+   "id": "CI",
+   "name_ok": true,
+   "pct_in_paper": 90,
+   "pct_in_data": 90,
+   "pct_ok": true
+  },
+  {
+   "id": "CHG",
+   "name_ok": true,
+   "pct_in_paper": 95,
+   "pct_in_data": 95,
+   "pct_ok": true
+  },
+  {
+   "id": "WARN",
+   "name_ok": true,
+   "pct_in_paper": 92,
+   "pct_in_data": 92,
+   "pct_ok": true
+  },
+  {
+   "id": "REC",
+   "name_ok": true,
+   "pct_in_paper": 100,
+   "pct_in_data": 100,
+   "pct_ok": true
+  },
+  {
+   "id": "DOC",
+   "name_ok": true,
+   "pct_in_paper": 97,
+   "pct_in_data": 97,
+   "pct_ok": true
+  },
+  {
+   "id": "RES",
+   "name_ok": true,
+   "pct_in_paper": 100,
+   "pct_in_data": 100,
+   "pct_ok": true
+  },
+  {
+   "id": "COM",
+   "name_ok": true,
+   "pct_in_paper": 74,
+   "pct_in_data": 74,
+   "pct_ok": true
+  },
+  {
+   "id": "CRM",
+   "name_ok": true,
+   "pct_in_paper": 3,
+   "pct_in_data": 3,
+   "pct_ok": true
+  }
+ ]
+}

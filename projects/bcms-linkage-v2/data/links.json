@@ -1,0 +1,602 @@
+[
+ {
+  "id": "L01",
+  "domain": "① 요구·분석",
+  "source": "REQ",
+  "target": "BIA",
+  "relation": "informs",
+  "evidence": "E1",
+  "group": false,
+  "quotes_primary": [
+   "A11"
+  ],
+  "quotes_support": [],
+  "established": "요구사항관리가 식별한 법규·규제·계약 요구사항이 BIA·중요도 분석 프로세스에 \"정보를 제공(inform)\"한다.",
+  "researcher": "\"inform\"을 \"S의 산출물이 T의 입력·기준이 된다(informs)\"로 해석. A11은 4개 프로세스를 한 문장으로 열거하므로 L01·L02·L04·L05는 이 문장에서 연구자가 분리한 연결.",
+  "indicator": "반영=BIA의 우선순위·복구목표 설정에 요구사항이 사용된 증거 / 확인=BIA 결과의 요구사항 누락 점검 / 갱신=요구사항 변경 시 BIA 재검토",
+  "validation": "전문가 패널 연결 타당도 평가(요구사항이 BIA에 실제로 입력되는가)",
+  "bialas": "해당 없음"
+ },
+ {
+  "id": "L02",
+  "domain": "① 요구·분석",
+  "source": "REQ",
+  "target": "RA",
+  "relation": "informs",
+  "evidence": "E1",
+  "group": false,
+  "quotes_primary": [
+   "A11"
+  ],
+  "quotes_support": [],
+  "established": "요구사항관리의 결과가 리스크평가 프로세스에 정보를 제공한다.",
+  "researcher": "인용문 분리 사유는 L01과 동일.",
+  "indicator": "반영=리스크평가의 범위·기준에 요구사항 사용 / 확인=요구사항 고려 여부 점검 / 갱신=요구사항 변경 시 리스크평가 기준·결과 재검토",
+  "validation": "전문가 패널 연결 타당도 평가",
+  "bialas": "해당 없음"
+ },
+ {
+  "id": "L03",
+  "domain": "① 요구·분석",
+  "source": "BIA",
+  "target": "RA",
+  "relation": "informs",
+  "evidence": "E1",
+  "group": false,
+  "quotes_primary": [
+   "A12"
+  ],
+  "quotes_support": [
+   "A13"
+  ],
+  "established": "리스크평가는 BIA·중요도 분석의 결과를 기반(foundation)으로 삼는다. BIA의 최종 결과는 근거가 첨부된 문서화된 진술(업무연속성 요구사항)이다.",
+  "researcher": "\"relies on ... as its foundation\"을 informs(입력·기준)로 해석.",
+  "indicator": "반영=리스크평가가 BIA의 핵심 활동 우선순위에서 출발 / 확인=평가 대상과 BIA 결과의 대조 / 갱신=BIA 결과 변경 시 리스크 목록 재검토",
+  "validation": "전문가 패널 연결 타당도 평가",
+  "bialas": "해당 없음"
+ },
+ {
+  "id": "L04",
+  "domain": "① 요구·분석",
+  "source": "REQ",
+  "target": "AUD",
+  "relation": "informs",
+  "evidence": "E1",
+  "group": false,
+  "quotes_primary": [
+   "A11"
+  ],
+  "quotes_support": [],
+  "established": "요구사항관리의 결과가 내부감사 프로세스에 정보를 제공한다.",
+  "researcher": "인용문 분리 사유는 L01과 동일. 내부감사 기준에 요구사항이 포함된다는 구체적 형태는 연구자의 지표화.",
+  "indicator": "반영=감사 기준·점검표에 요구사항 포함 / 확인=항목별 충족 확인 기록 / 갱신=요구사항 변경 시 감사 기준 재검토",
+  "validation": "전문가 패널 연결 타당도 평가",
+  "bialas": "해당 없음"
+ },
+ {
+  "id": "L05",
+  "domain": "① 요구·분석",
+  "source": "REQ",
+  "target": "SUP",
+  "relation": "informs",
+  "evidence": "E1",
+  "group": false,
+  "quotes_primary": [
+   "A11"
+  ],
+  "quotes_support": [
+   "A39"
+  ],
+  "established": "요구사항관리의 결과가 공급망관리 프로세스에 정보를 제공한다. 외주 서비스는 업무연속성 관점에서 평가·분석·통제되어야 한다.",
+  "researcher": "인용문 분리 사유는 L01과 동일. \"공급업체 선정·계약 조건에 BC 요구사항 포함\"은 A39(외주 서비스 통제)를 바탕으로 한 연구자의 지표화.",
+  "indicator": "반영=공급업체 선정·계약 조건에 BC 요구사항 포함 / 확인=공급업체의 요구사항 충족 평가 / 갱신=요구사항 변경 시 요건·평가 재검토",
+  "validation": "전문가 패널 연결 타당도 평가",
+  "bialas": "해당 없음"
+ },
+ {
+  "id": "L06",
+  "domain": "② 전략·계획·이행",
+  "source": "BIA",
+  "target": "STR",
+  "relation": "informs",
+  "evidence": "E1",
+  "group": false,
+  "quotes_primary": [
+   "A14"
+  ],
+  "quotes_support": [
+   "A13",
+   "A37"
+  ],
+  "established": "BIA·중요도 분석이 완료된 후, 승인된 업무연속성 요구사항이 BC 전략·솔루션의 결정·선정을 안내(guide)한다. BIA 결과는 경영진 승인을 거친다.",
+  "researcher": "\"guide\"를 informs(입력·기준)로 해석.",
+  "indicator": "반영=전략·솔루션 선정 근거로 BIA 결과 사용 / 확인=선택안이 복구목표를 충족하는지 검증 / 갱신=BIA 결과 변경 시 전략·솔루션 재검토",
+  "validation": "전문가 패널 연결 타당도 평가",
+  "bialas": "해당 없음"
+ },
+ {
+  "id": "L07",
+  "domain": "② 전략·계획·이행",
+  "source": "STR",
+  "target": "IMP",
+  "relation": "elaboratedInto",
+  "evidence": "E1",
+  "group": false,
+  "quotes_primary": [
+   "A15"
+  ],
+  "quotes_support": [
+   "A36"
+  ],
+  "established": "솔루션 이행관리 프로세스는 BC 전략·솔루션과 필요한 변경이 계획대로 실행되도록 보장하며, 이를 개시하고 검증한다.",
+  "researcher": "인용문의 주어는 이행관리이고 대상은 전략·솔루션이므로 \"STR이 IMP에서 구체화·실행된다\"(STR→IMP)로 방향을 해석. A36의 \"verifying\"은 확인(V) 상태를 고안할 때 참고했으나 V의 정의는 연구자 정의.",
+  "indicator": "반영=전략·솔루션이 담당·일정·예산이 있는 이행 활동으로 구체화 / 확인=구현 점검 / 갱신=전략·솔루션 수정 시 이행 계획 재검토",
+  "validation": "전문가 패널 연결 타당도 평가",
+  "bialas": "해당 없음"
+ },
+ {
+  "id": "L08",
+  "domain": "② 전략·계획·이행",
+  "source": "STR",
+  "target": "PLAN",
+  "relation": "elaboratedInto",
+  "evidence": "E1",
+  "group": false,
+  "quotes_primary": [
+   "A16"
+  ],
+  "quotes_support": [],
+  "established": "BC 계획·절차는 식별된 BC 전략·솔루션에서 도출(derived)되어 개발된다.",
+  "researcher": "\"derived from\"을 elaboratedInto(S의 내용이 T로 구체화됨)로 해석.",
+  "indicator": "반영=계획·절차에 전략·솔루션의 가동 방법 포함 / 확인=승인 전 일치성 검토 / 갱신=전략·솔루션 변경 시 계획·절차 개정",
+  "validation": "전문가 패널 연결 타당도 평가",
+  "bialas": "해당 없음"
+ },
+ {
+  "id": "L09",
+  "domain": "② 전략·계획·이행",
+  "source": "RA",
+  "target": "PLAN",
+  "relation": "informs",
+  "evidence": "E1",
+  "group": false,
+  "quotes_primary": [
+   "A17"
+  ],
+  "quotes_support": [],
+  "established": "리스크평가는 업무연속성 계획·절차 개발에 필수적인 입력(essential input)을 제공한다.",
+  "researcher": "A17의 주어 \"it\"이 리스크평가 프로세스임은 앞 문장의 주어에서 연구자가 확인한 지시 관계.",
+  "indicator": "반영=계획·절차에 식별된 위협 시나리오 반영 / 확인=리스크 목록과 대조 / 갱신=리스크 변경 시 계획·절차 재검토",
+  "validation": "전문가 패널 연결 타당도 평가",
+  "bialas": "해당 없음"
+ },
+ {
+  "id": "L10",
+  "domain": "② 전략·계획·이행",
+  "source": "RES",
+  "target": "IMP",
+  "relation": "supplies",
+  "evidence": "E2",
+  "group": false,
+  "quotes_primary": [
+   "A18"
+  ],
+  "quotes_support": [
+   "A38",
+   "B16"
+  ],
+  "established": "자원관리의 산출물에는 선정된 전략의 이행·운영을 위한 문서화된 자원이 포함된다. 전략 실행에 필요한 자원은 자원관리에서 식별·배정·모니터링된다.",
+  "researcher": "[연구자 보완] 인용문은 \"selected strategies의 implementing and running\"을 위한 자원이라고만 쓰며 도착 프로세스를 특정하지 않는다. 이를 솔루션 이행관리(IMP)로 특정한 것은 연구자 해석(운영(running)은 IMP 외 프로세스일 수도 있음).",
+  "indicator": "반영=솔루션 구현·운영에 필요한 자원이 문서로 확보·배정 / 확인=자원 충분성 확인 / 갱신=솔루션 변경 시 자원 배정 재검토",
+  "validation": "전문가 패널에서 도착 프로세스(IMP)가 적절한지 평가. 부적절하면 도착을 \"핵심 프로세스 전반\"으로 변경",
+  "bialas": "Białas는 supportedByResource slot으로 BCMS를 지원하는 자원 개체를 둔다(B16). 프로세스 간 연결은 아님."
+ },
+ {
+  "id": "L11",
+  "domain": "③ 대응·복구·훈련",
+  "source": "BIA",
+  "target": "RES",
+  "relation": "informs",
+  "evidence": "E3",
+  "group": false,
+  "quotes_primary": [],
+  "quotes_support": [
+   "B10",
+   "B11",
+   "A38"
+  ],
+  "established": "Białas는 BIA 보고서를 \"서비스 재개에 필요한 자원\"으로 질의하는 예를 보여 준다. Arias는 자원관리가 전략·BCMS 프로세스 실행에 필요한 자원을 식별한다고만 서술한다.",
+  "researcher": "[연구자 가정] BIA가 파악한 복구 필요 자원이 자원관리 계획에 투입된다는 연결은 Arias에 서술이 없다. Białas의 예는 프로세스 간 연결이 아니라 BIA 보고서 내부 속성(자원 항목)을 질의하는 수준이므로 유추 근거에 그친다.",
+  "indicator": "반영=BIA의 복구 필요 자원이 자원 계획에 포함 / 확인=자원이 복구목표 달성에 충분한지 확인 / 갱신=BIA·복구목표 변경 시 자원 배정 재검토",
+  "validation": "전문가 합의 필수. 합의 80% 미만이면 삭제(Arias A44 판정 틀 준용)",
+  "bialas": "Białas §2.8 Fig.4 설명(B10, B11): BIAreport의 resour4Resumption 속성"
+ },
+ {
+  "id": "L12",
+  "domain": "③ 대응·복구·훈련",
+  "source": "PLAN",
+  "target": "INC",
+  "relation": "elaboratedInto",
+  "evidence": "E2",
+  "group": false,
+  "quotes_primary": [
+   "A19"
+  ],
+  "quotes_support": [
+   "A20"
+  ],
+  "established": "BC 전략·솔루션의 가동은 중단 사건에 대응하여 BC 계획·절차의 실행을 통해 개시된다. 경보·커뮤니케이션은 조직의 BC 계획·절차 안에서 대응을 조정한다.",
+  "researcher": "[연구자 보완] 인용문은 \"BC 계획·절차가 중단 사건 대응 시 실행된다\"고 쓰지만 도착 프로세스를 \"사고·비상 대응\"으로 명시하지 않는다. 사고·비상 대응이 \"중단 사건 관리의 포괄적 접근\"을 정의한다는 같은 쪽 서술과 결합해 PLAN→INC로 해석.",
+  "indicator": "반영=사고 대응 체계(역할·가동 기준)가 계획에 따라 정해짐 / 확인=실제·모의 사고에서 계획대로 대응했는지 확인 / 갱신=계획 변경 시 사고대응 체계 재검토",
+  "validation": "전문가 패널 연결 타당도 평가",
+  "bialas": "해당 없음"
+ },
+ {
+  "id": "L13",
+  "domain": "③ 대응·복구·훈련",
+  "source": "INC",
+  "target": "WARN",
+  "relation": "contains",
+  "evidence": "E1",
+  "group": false,
+  "quotes_primary": [
+   "A21"
+  ],
+  "quotes_support": [
+   "A20"
+  ],
+  "established": "사고·비상 대응 프로세스는 두 개의 주요 하위 프로세스(경보·커뮤니케이션, 복구)를 포함한다. 경보·커뮤니케이션은 BC 계획·절차 안에서 대응을 조정한다.",
+  "researcher": "[연구자 판단] \"subprocess\"는 정보 흐름이 아니라 포함 관계(contains)이다. 연계성 측정에서는 \"하위 프로세스가 상위 대응 절차 안에 통합되어 실제 운영되는가\"를 지표화했다. Arias는 Table 5에서 경보·커뮤니케이션을 별도 프로세스로도 목록화(p.14)하므로 포함 관계를 연결로 측정할지는 연구자 결정 사항.",
+  "indicator": "반영=사고 대응 절차에 경보·전파 포함 / 확인=경보 적시 도달 확인 / 갱신=대응 체계 변경 시 연락망·경보 절차 재검토",
+  "validation": "전문가 패널에서 \"포함 관계를 연계성으로 볼 것인가\" 별도 평가",
+  "bialas": "해당 없음"
+ },
+ {
+  "id": "L14",
+  "domain": "③ 대응·복구·훈련",
+  "source": "INC",
+  "target": "REC",
+  "relation": "contains",
+  "evidence": "E1",
+  "group": false,
+  "quotes_primary": [
+   "A21"
+  ],
+  "quotes_support": [
+   "A22"
+  ],
+  "established": "사고·비상 대응 프로세스는 복구 프로세스를 하위 프로세스로 포함한다. 복구는 임시 조치 상태에서 일상 업무를 회복·재개하는 것이다.",
+  "researcher": "[연구자 판단] L13과 같은 이유로 포함 관계를 지표화. \"대응 결과가 복구로 끊김 없이 이어진다\"는 R 문항의 표현은 연구자의 지표화이며 인용문이 직접 말하는 내용이 아니다.",
+  "indicator": "반영=대응 상황 판단·결과가 복구 활동으로 이어짐 / 확인=복구 완료를 복구목표(RTO 등)로 확인 / 갱신=대응 절차 변경 시 복구 절차 재검토",
+  "validation": "전문가 패널에서 포함 관계 지표화 적절성 평가",
+  "bialas": "해당 없음"
+ },
+ {
+  "id": "L15",
+  "domain": "③ 대응·복구·훈련",
+  "source": "PLAN",
+  "target": "EXE",
+  "relation": "testedBy",
+  "evidence": "E1",
+  "group": false,
+  "quotes_primary": [
+   "A23"
+  ],
+  "quotes_support": [],
+  "established": "BC 전략·솔루션과 BC 계획·절차(경보·커뮤니케이션 절차 포함)는 정기적으로 시험되어 유효성이 검증된다.",
+  "researcher": "\"tested regularly to validate their effectiveness\"를 testedBy(S가 T에 의해 시험됨)로 해석. 훈련·연습 시나리오 설계 방식은 연구자의 지표화.",
+  "indicator": "반영=연습 시나리오가 계획·절차를 실제 적용하도록 설계 / 확인=연습 결과를 유효성 기준으로 평가·기록 / 갱신=계획 변경 시 시나리오 재검토",
+  "validation": "전문가 패널 연결 타당도 평가",
+  "bialas": "해당 없음"
+ },
+ {
+  "id": "L16",
+  "domain": "④ 평가·개선·변경",
+  "source": "EXE",
+  "target": "PLAN",
+  "relation": "updates",
+  "evidence": "E1",
+  "group": false,
+  "quotes_primary": [
+   "A23"
+  ],
+  "quotes_support": [],
+  "established": "연습은 필요한 조정·개선(adjustments or enhancements)을 촉구(prompt)한다.",
+  "researcher": "조정 대상은 인용문상 \"전략·솔루션·계획·절차\" 모두이나 본 연결은 BC 계획·절차로 한정(연구자 한정). 방향 해석(EXE의 결과가 PLAN을 개정)은 연구자 해석.",
+  "indicator": "반영=연습의 문제점·개선사항이 계획 수정에 반영 / 확인=요청한 수정의 반영 확인 / 갱신=연습 결과가 새로 나올 때마다 계획 재검토",
+  "validation": "전문가 패널 연결 타당도 평가",
+  "bialas": "해당 없음"
+ },
+ {
+  "id": "L17",
+  "domain": "④ 평가·개선·변경",
+  "source": "PLAN",
+  "target": "AWR",
+  "relation": "informs",
+  "evidence": "E3",
+  "group": false,
+  "quotes_primary": [],
+  "quotes_support": [
+   "A24",
+   "B12"
+  ],
+  "established": "Arias는 인식·훈련·교육 프로그램이 인력의 인식과 역량을 키운다고만 서술하며 계획·절차와의 연결은 서술하지 않는다. Białas는 훈련 활동에 \"필요(needs)\"를 별도 항목으로 둔다.",
+  "researcher": "[연구자 가정] 교육 내용이 BC 계획·절차(역할 포함)에서 도출·반영된다는 연결은 두 논문에 직접 근거가 없다. 인력이 계획과 자기 역할을 알아야 계획이 실행된다는 연구자 판단에 기초한다.",
+  "indicator": "반영=교육 내용에 계획·절차와 역할 포함 / 확인=구성원의 이해 확인 / 갱신=계획 변경 시 교육 내용·대상 재검토",
+  "validation": "전문가 합의 필수. 합의 80% 미만이면 삭제",
+  "bialas": "Białas §2.8 Fig.3 설명(B12): 훈련의 needs, programs, results, records"
+ },
+ {
+  "id": "L18",
+  "domain": "④ 평가·개선·변경",
+  "source": "PERF",
+  "target": "CI",
+  "relation": "informs",
+  "evidence": "E1",
+  "group": false,
+  "quotes_primary": [
+   "A25"
+  ],
+  "quotes_support": [
+   "A46"
+  ],
+  "established": "성과평가의 결과는 BCMS 및 전략·솔루션·계획·절차의 효과성·효율성·적합성·충분성을 개선하는 데 사용되며, 이는 지속적 개선 프로세스에서 실현된다.",
+  "researcher": "A25는 3개 출처를 한 문장에 열거하므로 L18·L19·L20은 연구자가 분리한 연결.",
+  "indicator": "반영=성과평가 결과가 개선 과제로 연결 / 확인=조치 완료·효과 확인 / 갱신=새 평가 결과마다 개선 과제 재검토",
+  "validation": "전문가 패널 연결 타당도 평가",
+  "bialas": "해당 없음"
+ },
+ {
+  "id": "L19",
+  "domain": "④ 평가·개선·변경",
+  "source": "AUD",
+  "target": "CI",
+  "relation": "informs",
+  "evidence": "E1",
+  "group": false,
+  "quotes_primary": [
+   "A25"
+  ],
+  "quotes_support": [
+   "A46"
+  ],
+  "established": "내부감사의 결과는 BCMS 개선에 사용되며, 지속적 개선 프로세스에서 실현된다.",
+  "researcher": "분리 사유는 L18과 동일.",
+  "indicator": "반영=감사 지적사항이 개선 조치 계획에 포함 / 확인=조치 후속 확인 / 갱신=새 감사 결과마다 개선 과제 재검토",
+  "validation": "전문가 패널 연결 타당도 평가",
+  "bialas": "해당 없음"
+ },
+ {
+  "id": "L20",
+  "domain": "④ 평가·개선·변경",
+  "source": "SUP",
+  "target": "CI",
+  "relation": "informs",
+  "evidence": "E1",
+  "group": false,
+  "quotes_primary": [
+   "A25"
+  ],
+  "quotes_support": [
+   "A46"
+  ],
+  "established": "공급망관리의 결과는 BCMS 개선에 사용되며, 지속적 개선 프로세스에서 실현된다.",
+  "researcher": "분리 사유는 L18과 동일.",
+  "indicator": "반영=공급업체 평가 결과가 개선 과제에 포함 / 확인=조치 이행 확인 / 갱신=새 평가 결과마다 개선 과제 재검토",
+  "validation": "전문가 패널 연결 타당도 평가",
+  "bialas": "해당 없음"
+ },
+ {
+  "id": "L21",
+  "domain": "④ 평가·개선·변경",
+  "source": "CHG",
+  "target": "RA",
+  "relation": "triggers",
+  "evidence": "E1",
+  "group": false,
+  "quotes_primary": [
+   "A27"
+  ],
+  "quotes_support": [
+   "A26"
+  ],
+  "established": "BC 변경관리의 산출물에는 중대한 제안·발생 변경에 대응한 리스크평가의 개시, 그리고 리스크평가와 오가는 제안·필요 변경 및 변경 결과가 포함된다.",
+  "researcher": "A26의 \"for and from\"은 양방향 흐름을 시사하나 본 연결은 CHG→RA 방향만 채택하고 반대 방향은 보류연결 H02에 기록(연구자 판단).",
+  "indicator": "반영=BCMS에 영향 주는 변경이 리스크평가 대상에 포함 / 확인=변경 승인 전 리스크평가 거침 확인 / 갱신=중대한 변경 시 리스크평가 재수행",
+  "validation": "전문가 패널 연결 타당도 평가",
+  "bialas": "해당 없음"
+ },
+ {
+  "id": "L22",
+  "domain": "⑤ 거버넌스·이해관계자",
+  "source": "CHG",
+  "target": "DOC",
+  "relation": "updates",
+  "evidence": "E1",
+  "group": false,
+  "quotes_primary": [
+   "A28"
+  ],
+  "quotes_support": [
+   "A41"
+  ],
+  "established": "BC 변경관리의 산출물에는 문서화된 정보 통제 프로세스를 위한 필요한 변경이 포함된다. 문서화된 정보 통제는 정보의 식별·작성·갱신·통제를 포함한다.",
+  "researcher": "\"갱신\" 상태의 정의를 고안할 때 A41의 \"updating\"을 참고. 갱신의 정의 자체는 연구자 정의.",
+  "indicator": "반영=승인된 변경이 관련 문서에 반영 / 확인=버전·승인 기록으로 최신 반영 확인 / 갱신=변경마다 문서·배포 대상 갱신",
+  "validation": "전문가 패널 연결 타당도 평가",
+  "bialas": "해당 없음"
+ },
+ {
+  "id": "L23",
+  "domain": "⑤ 거버넌스·이해관계자",
+  "source": "INC",
+  "target": "CHG",
+  "relation": "triggers",
+  "evidence": "E1",
+  "group": false,
+  "quotes_primary": [
+   "A29"
+  ],
+  "quotes_support": [],
+  "established": "사고·비상 대응이 개시한 변경의 결과가 변경관리의 산출물에 포함된다(\"as those processes initiated them\").",
+  "researcher": "\"initiated\"를 triggers(S의 사건·결과가 T의 수행을 개시)로 해석. A29는 INC·EXE와 변경 결과 방향을 한 문장에 담으므로 L23~L26은 연구자가 분리한 4개 연결.",
+  "indicator": "반영=사고 대응에서 나온 변경 필요사항이 변경관리로 접수 / 확인=처리 결과 확인 / 갱신=새 대응 결과마다 변경 필요 여부 재검토",
+  "validation": "전문가 패널 연결 타당도 평가",
+  "bialas": "해당 없음"
+ },
+ {
+  "id": "L24",
+  "domain": "⑤ 거버넌스·이해관계자",
+  "source": "EXE",
+  "target": "CHG",
+  "relation": "triggers",
+  "evidence": "E1",
+  "group": false,
+  "quotes_primary": [
+   "A29"
+  ],
+  "quotes_support": [],
+  "established": "훈련·연습이 개시한 변경의 결과가 변경관리의 산출물에 포함된다.",
+  "researcher": "분리 사유는 L23과 동일.",
+  "indicator": "반영=연습에서 나온 변경 필요사항이 변경관리로 접수 / 확인=처리 결과 확인 / 갱신=새 연습 결과마다 변경 필요 여부 재검토",
+  "validation": "전문가 패널 연결 타당도 평가",
+  "bialas": "해당 없음"
+ },
+ {
+  "id": "L25",
+  "domain": "⑤ 거버넌스·이해관계자",
+  "source": "CHG",
+  "target": "INC",
+  "relation": "updates",
+  "evidence": "E1",
+  "group": false,
+  "quotes_primary": [
+   "A29"
+  ],
+  "quotes_support": [],
+  "established": "변경의 결과가 사고·비상 대응 프로세스로 돌아간다(\"The results of changes to the incident and emergency handling process\").",
+  "researcher": "분리 사유는 L23과 동일. \"results of changes to\"를 updates(변경이 T의 내용을 개정)로 해석.",
+  "indicator": "반영=승인된 변경이 사고 대응 절차에 반영 / 확인=반영 확인 / 갱신=변경 승인마다 사고 대응 절차 재검토",
+  "validation": "전문가 패널 연결 타당도 평가",
+  "bialas": "해당 없음"
+ },
+ {
+  "id": "L26",
+  "domain": "⑤ 거버넌스·이해관계자",
+  "source": "CHG",
+  "target": "EXE",
+  "relation": "updates",
+  "evidence": "E1",
+  "group": false,
+  "quotes_primary": [
+   "A29"
+  ],
+  "quotes_support": [],
+  "established": "변경의 결과가 BC 계획·절차 훈련·연습 프로세스로 돌아간다.",
+  "researcher": "분리 사유는 L23과 동일.",
+  "indicator": "반영=승인된 변경이 연습 절차·시나리오에 반영 / 확인=반영 확인 / 갱신=변경 승인마다 연습 절차 재검토",
+  "validation": "전문가 패널 연결 타당도 평가",
+  "bialas": "해당 없음"
+ },
+ {
+  "id": "L27",
+  "domain": "⑤ 거버넌스·이해관계자",
+  "source": "CORE",
+  "target": "COM",
+  "relation": "informs",
+  "evidence": "E1",
+  "group": true,
+  "quotes_primary": [
+   "A30"
+  ],
+  "quotes_support": [
+   "A40"
+  ],
+  "established": "거의 모든 BCMS 프로세스의 결과가 협의·커뮤니케이션 프로세스를 통해 BCMS 외부 이해관계자에게 중앙에서 전달된다.",
+  "researcher": "[연구자 판단] \"nearly all BCMS processes\"는 프로세스를 열거하지 않으므로 출발점을 집단 노드 CORE(\"핵심 BCMS 프로세스 전반\")로 처리했다. CORE는 Arias의 객체가 아니라 연구자가 만든 가상 노드이다.",
+  "indicator": "반영=BCMS 주요 결과가 이해관계자 협의 채널로 전달 / 확인=이해·의견 접수 확인 / 갱신=결과가 크게 바뀌면 전달 내용 재검토",
+  "validation": "전문가 패널에서 집단 출발점 처리의 적절성 평가",
+  "bialas": "해당 없음"
+ },
+ {
+  "id": "L28",
+  "domain": "⑤ 거버넌스·이해관계자",
+  "source": "COM",
+  "target": "GOV",
+  "relation": "informs",
+  "evidence": "E1",
+  "group": false,
+  "quotes_primary": [
+   "A31"
+  ],
+  "quotes_support": [
+   "A47"
+  ],
+  "established": "협의·커뮤니케이션의 보고와 식별된 요구사항은 BC 거버넌스 프로세스의 입력으로 쓰인다.",
+  "researcher": "\"These reports\"는 앞 문장(리스크와 BC 관리 보고의 커뮤니케이션)을 가리킨다고 연구자가 확인(A47).",
+  "indicator": "반영=보고·요구사항이 경영진 검토·의사결정의 입력 / 확인=경영진 검토·결정 기록 / 갱신=새 보고·요구사항 접수 시 검토 안건 재검토",
+  "validation": "전문가 패널 연결 타당도 평가",
+  "bialas": "해당 없음"
+ },
+ {
+  "id": "L29",
+  "domain": "⑤ 거버넌스·이해관계자",
+  "source": "GOV",
+  "target": "POL",
+  "relation": "elaboratedInto",
+  "evidence": "E3",
+  "group": false,
+  "quotes_primary": [],
+  "quotes_support": [
+   "A33",
+   "A34",
+   "A35",
+   "B13"
+  ],
+  "established": "Arias는 거버넌스(BCMS가 이해관계자의 목표·요구에 부합하도록 보장)와 정책관리(정책의 개발·유지·보존, 접근·이해 보장)를 각각 서술할 뿐 두 프로세스의 관계는 서술하지 않는다. Białas는 목표(objectives)와 정책(policy)을 \"Plan\" 단계의 병렬 항목으로 나열한다.",
+  "researcher": "[연구자 가정] 정책이 경영진이 정한 BC 목표·방향에서 도출된다는 연결은 두 논문에 근거가 없다(이를 뒷받침하는 인용이 두 논문에 없음). 또한 Białas에서는 정책과 목표가 형제 항목이므로 Białas는 이 연결을 지지하지 않는다.",
+  "indicator": "반영=BC 정책이 경영진의 BC 목표·방향 반영 / 확인=승인 절차로 일치 확인 / 갱신=목표·방향 변경 시 정책 개정·공지",
+  "validation": "전문가 합의 필수. 합의 80% 미만이면 삭제",
+  "bialas": "Białas §2.8 Fig.2 설명(B13): 목표와 정책이 같은 Plan 단계의 병렬 항목"
+ },
+ {
+  "id": "L30",
+  "domain": "⑤ 거버넌스·이해관계자",
+  "source": "RES",
+  "target": "CORE",
+  "relation": "supplies",
+  "evidence": "E1",
+  "group": true,
+  "quotes_primary": [
+   "A18"
+  ],
+  "quotes_support": [
+   "A38"
+  ],
+  "established": "자원관리의 산출물에는 핵심 BCMS 프로세스 운영을 위한 자원과 BCMS 핵심 프로세스에 대한 자원 사용 보고가 포함된다.",
+  "researcher": "[연구자 판단] 도착이 \"핵심 BCMS 프로세스(복수)\"이므로 집단 노드 CORE를 사용(L27과 동일 사유).",
+  "indicator": "반영=핵심 프로세스에 자원 제공·사용 보고 / 확인=보고서로 사용 확인 / 갱신=사용 보고 결과에 따라 자원 배분 재검토",
+  "validation": "전문가 패널에서 집단 도착점 처리의 적절성 평가",
+  "bialas": "해당 없음"
+ },
+ {
+  "id": "L31",
+  "domain": "⑤ 거버넌스·이해관계자",
+  "source": "RES",
+  "target": "CRM",
+  "relation": "supplies",
+  "evidence": "E1",
+  "group": false,
+  "quotes_primary": [
+   "A18"
+  ],
+  "quotes_support": [
+   "A32"
+  ],
+  "established": "자원관리의 산출물에는 고객관계관리 프로세스에 대한 자원 사용 보고가 포함된다. 고객관계관리는 고객 만족의 운영적 관리와 BC 투자 가치의 지속적 입증을 수행한다.",
+  "researcher": "R 문항의 \"BC 투자 가치 입증\"은 CRM의 기능을 서술한 A32를 문항 문구에 반영한 연구자의 지표화이며, 인용문이 \"자원 보고가 가치 입증에 쓰인다\"고 직접 말하는 것은 아니다.",
+  "indicator": "반영=자원 사용 보고가 고객관계관리에 제공·활용 / 확인=보고의 충분성 확인 / 갱신=사용 현황 변경 시 보고 재검토",
+  "validation": "전문가 패널 연결 타당도 평가",
+  "bialas": "해당 없음"
+ }
+]

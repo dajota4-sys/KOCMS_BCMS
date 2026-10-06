@@ -1,0 +1,51 @@
+[
+ {
+  "id": "RT01",
+  "name": "informs",
+  "definition": "S의 산출물이 T의 입력·기준·근거가 된다.",
+  "test": "T를 수행할 때 S의 산출물이 필요한가?",
+  "links": "L01~L06, L09, L11, L17, L18~L20, L27, L28"
+ },
+ {
+  "id": "RT02",
+  "name": "elaboratedInto",
+  "definition": "S의 내용이 T로 구체화·도출·실행된다.",
+  "test": "T의 내용은 S에서 도출되는가(S가 바뀌면 T를 다시 써야 하는가)?",
+  "links": "L07, L08, L12, L29"
+ },
+ {
+  "id": "RT03",
+  "name": "testedBy",
+  "definition": "S가 T에 의해 시험·검증된다.",
+  "test": "T가 S의 유효성을 평가하는가?",
+  "links": "L15"
+ },
+ {
+  "id": "RT04",
+  "name": "updates",
+  "definition": "S의 결과·승인된 변경이 T의 내용을 개정·갱신한다.",
+  "test": "S의 결과가 T의 문서·절차를 바꾸는가?",
+  "links": "L16, L22, L25, L26"
+ },
+ {
+  "id": "RT05",
+  "name": "triggers",
+  "definition": "S의 사건·결과가 T의 수행을 개시한다.",
+  "test": "S가 일어나면 T가 시작되는가?",
+  "links": "L21, L23, L24"
+ },
+ {
+  "id": "RT06",
+  "name": "contains",
+  "definition": "T는 S의 하위 프로세스이다.",
+  "test": "T가 S의 일부로서 S 안에서 수행되는가?",
+  "links": "L13, L14"
+ },
+ {
+  "id": "RT07",
+  "name": "supplies",
+  "definition": "S가 T에 자원 또는 자원 관련 보고를 제공한다.",
+  "test": "T가 S로부터 자원 또는 자원 사용 보고를 받는가?",
+  "links": "L10, L30, L31"
+ }
+]

@@ -1,0 +1,222 @@
+[
+ {
+  "id": "GOV",
+  "name": "BC 거버넌스",
+  "category": "관리",
+  "pdca": "-",
+  "lifecycle": "-",
+  "expert_pct": 90,
+  "artefact": "경영진 검토 결과",
+  "arias_name": "Business continuity governance process"
+ },
+ {
+  "id": "POL",
+  "name": "BC 정책관리",
+  "category": "핵심",
+  "pdca": "Plan",
+  "lifecycle": "Mitigation",
+  "expert_pct": 87,
+  "artefact": "BC 정책",
+  "arias_name": "Business continuity policy management process"
+ },
+ {
+  "id": "REQ",
+  "name": "요구사항관리",
+  "category": "핵심",
+  "pdca": "Plan",
+  "lifecycle": "Mitigation",
+  "expert_pct": 74,
+  "artefact": "법규·계약 요구사항 목록",
+  "arias_name": "Requirements management process"
+ },
+ {
+  "id": "BIA",
+  "name": "BIA·중요도 분석",
+  "category": "핵심",
+  "pdca": "Plan",
+  "lifecycle": "Mitigation",
+  "expert_pct": 100,
+  "artefact": "BIA 결과(문서화된 업무연속성 요구사항)",
+  "arias_name": "Business impact assessment and criticality analysis process"
+ },
+ {
+  "id": "RA",
+  "name": "리스크평가",
+  "category": "핵심",
+  "pdca": "Plan",
+  "lifecycle": "Mitigation",
+  "expert_pct": 90,
+  "artefact": "리스크 카탈로그",
+  "arias_name": "Risk assessment process (for risks of disruption)"
+ },
+ {
+  "id": "STR",
+  "name": "BC 전략·솔루션 결정·선정",
+  "category": "핵심",
+  "pdca": "Plan",
+  "lifecycle": "Mitigation",
+  "expert_pct": 74,
+  "artefact": "선정된 BC 전략·솔루션",
+  "arias_name": "Process of determining and selecting BC strategies and solutions"
+ },
+ {
+  "id": "PLAN",
+  "name": "BC 계획·절차 개발",
+  "category": "핵심",
+  "pdca": "Plan",
+  "lifecycle": "Mitigation",
+  "expert_pct": 69,
+  "artefact": "BC 계획·절차",
+  "arias_name": "Process of developing BC plans and procedures"
+ },
+ {
+  "id": "IMP",
+  "name": "솔루션 이행관리",
+  "category": "핵심",
+  "pdca": "Do",
+  "lifecycle": "Preparedness",
+  "expert_pct": 69,
+  "artefact": "구현된 솔루션",
+  "arias_name": "Solution implementation management process"
+ },
+ {
+  "id": "INC",
+  "name": "사고·비상 대응",
+  "category": "핵심",
+  "pdca": "Do",
+  "lifecycle": "Response",
+  "expert_pct": 100,
+  "artefact": "사고 대응 기록",
+  "arias_name": "Incident and emergency handling process"
+ },
+ {
+  "id": "EXE",
+  "name": "BC 계획·절차 훈련·연습",
+  "category": "핵심",
+  "pdca": "Do",
+  "lifecycle": "Preparedness",
+  "expert_pct": 100,
+  "artefact": "연습 결과",
+  "arias_name": "Process of exercising BC plans and procedures"
+ },
+ {
+  "id": "AWR",
+  "name": "인식·역량·교육",
+  "category": "핵심",
+  "pdca": "Do",
+  "lifecycle": "Preparedness",
+  "expert_pct": 95,
+  "artefact": "교육 프로그램·기록",
+  "arias_name": "Awareness, competence, and training process"
+ },
+ {
+  "id": "SUP",
+  "name": "공급망관리",
+  "category": "핵심",
+  "pdca": "Do",
+  "lifecycle": "Preparedness",
+  "expert_pct": 90,
+  "artefact": "공급업체 평가 결과",
+  "arias_name": "Supply chain management process"
+ },
+ {
+  "id": "AUD",
+  "name": "내부감사",
+  "category": "핵심",
+  "pdca": "Check",
+  "lifecycle": "Preparedness",
+  "expert_pct": 97,
+  "artefact": "감사 결과",
+  "arias_name": "Internal audit process"
+ },
+ {
+  "id": "PERF",
+  "name": "성과평가",
+  "category": "핵심",
+  "pdca": "Check",
+  "lifecycle": "Preparedness",
+  "expert_pct": 87,
+  "artefact": "성과평가 결과",
+  "arias_name": "Performance evaluation process"
+ },
+ {
+  "id": "CI",
+  "name": "지속적 개선",
+  "category": "핵심",
+  "pdca": "Act",
+  "lifecycle": "Preparedness",
+  "expert_pct": 90,
+  "artefact": "개선 과제·조치",
+  "arias_name": "Continual improvement process"
+ },
+ {
+  "id": "CHG",
+  "name": "BC 변경관리",
+  "category": "핵심",
+  "pdca": "Act",
+  "lifecycle": "Preparedness",
+  "expert_pct": 95,
+  "artefact": "변경 요청·변경 결과",
+  "arias_name": "Business continuity changes management process"
+ },
+ {
+  "id": "WARN",
+  "name": "경보·커뮤니케이션",
+  "category": "핵심",
+  "pdca": "Act",
+  "lifecycle": "Response",
+  "expert_pct": 92,
+  "artefact": "경보·전파 기록",
+  "arias_name": "Warning and communication process"
+ },
+ {
+  "id": "REC",
+  "name": "복구",
+  "category": "핵심",
+  "pdca": "Act",
+  "lifecycle": "Recovery",
+  "expert_pct": 100,
+  "artefact": "복구 결과",
+  "arias_name": "Recovery process"
+ },
+ {
+  "id": "DOC",
+  "name": "문서화된 정보 통제",
+  "category": "지원",
+  "pdca": "-",
+  "lifecycle": "-",
+  "expert_pct": 97,
+  "artefact": "문서·기록",
+  "arias_name": "Process of controlling documented information"
+ },
+ {
+  "id": "RES",
+  "name": "자원관리",
+  "category": "지원",
+  "pdca": "-",
+  "lifecycle": "-",
+  "expert_pct": 100,
+  "artefact": "자원·자원 사용 보고",
+  "arias_name": "Resource management process"
+ },
+ {
+  "id": "COM",
+  "name": "협의·커뮤니케이션",
+  "category": "지원",
+  "pdca": "-",
+  "lifecycle": "-",
+  "expert_pct": 74,
+  "artefact": "이해관계자 보고·요구",
+  "arias_name": "Consultation and communication process"
+ },
+ {
+  "id": "CRM",
+  "name": "고객관계관리",
+  "category": "지원",
+  "pdca": "-",
+  "lifecycle": "-",
+  "expert_pct": 3,
+  "artefact": "고객 만족·가치 입증 보고",
+  "arias_name": "Customer relationship management process"
+ }
+]

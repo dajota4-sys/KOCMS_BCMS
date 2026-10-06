@@ -1,0 +1,578 @@
+[
+ {
+  "id": "A01",
+  "source": "Arias",
+  "pages": "4",
+  "section": "§2.1",
+  "text": "Activities utilizing resources must be managed to convert inputs into outputs through a series of interconnected or interacting activities, also called processes",
+  "ko": "자원을 사용하는 활동은 입력을 출력으로 전환하는, 상호 연결되거나 상호작용하는 일련의 활동, 즉 프로세스를 통해 관리되어야 한다.",
+  "use": "연계성 정의의 근거(프로세스 = 상호 연결·상호작용 활동)"
+ },
+ {
+  "id": "A02",
+  "source": "Arias",
+  "pages": "5",
+  "section": "§2.1 (ISO/IEC 33004 기준 4)",
+  "text": "A process reference model should delineate the interconnections among the processes outlined within it.",
+  "ko": "프로세스 참조모델은 그 안에 기술된 프로세스들 사이의 상호 연결을 명시해야 한다.",
+  "use": "연계성 정의의 근거(프로세스 간 상호 연결 명시 요구)"
+ },
+ {
+  "id": "A03",
+  "source": "Arias",
+  "pages": "3",
+  "section": "§1",
+  "text": "A detailed reference model outlining BCMS processes—including inputs, outputs, interfaces, and interactions at the activity level—facilitates optimal coordination of these processes.",
+  "ko": "BCMS 프로세스를 활동 수준의 입력·출력·인터페이스·상호작용까지 상세히 기술한 참조모델은 이들 프로세스의 최적 조정을 촉진한다.",
+  "use": "연계성 정의의 근거(입력·출력·인터페이스)"
+ },
+ {
+  "id": "A04",
+  "source": "Arias",
+  "pages": "6",
+  "section": "§2.2 (ISO 22301 Clause 4.4)",
+  "text": "taking into account their order, interactions, inputs, outputs, resources, and assigned roles",
+  "ko": "(BCMS 프로세스를 정의·이행·유지할 때) 프로세스의 순서, 상호작용, 입력, 출력, 자원, 부여된 역할을 고려한다.",
+  "use": "연계성 정의의 근거(ISO 22301 4.4)"
+ },
+ {
+  "id": "A05",
+  "source": "Arias",
+  "pages": "2",
+  "section": "§1",
+  "text": "Organizations often struggle with performing a checklist approach regarding the BCMS requirements because it does not necessarily lead to a sustainable operated management system.",
+  "ko": "조직은 BCMS 요구사항에 대해 체크리스트 방식을 수행하는 데 종종 어려움을 겪는데, 이는 지속 가능하게 운영되는 경영시스템으로 반드시 이어지지 않기 때문이다.",
+  "use": "연결 유지 정도를 측정하는 이유(체크리스트의 한계)"
+ },
+ {
+  "id": "A06",
+  "source": "Arias",
+  "pages": "3-4",
+  "section": "§1",
+  "text": "including process descriptions (process profiles) and process flow charts, though the latter are omitted here to maintain the scope of the paper",
+  "ko": "(참조모델 결과물에는) 프로세스 설명(프로세스 프로파일)과 프로세스 흐름도가 포함되나, 후자는 논문 범위 유지를 위해 여기서는 생략한다.",
+  "use": "연결 목록이 이 논문에서 완전하지 않을 수 있는 근거"
+ },
+ {
+  "id": "A07",
+  "source": "Arias",
+  "pages": "18",
+  "section": "§5",
+  "text": "A key finding of this pilot initiative is the reinforcement of the systemic nature of the BCMS, emphasizing the interplay between processes and the roles within the BCMS framework.",
+  "ko": "이 시범사업의 핵심 발견은 BCMS의 체계적 성격이 강화되었다는 점이며, BCMS 틀 안에서 프로세스와 역할 간의 상호작용이 강조된다.",
+  "use": "연계성이 BCMS 운영의 핵심 특성이라는 근거"
+ },
+ {
+  "id": "A08",
+  "source": "Arias",
+  "pages": "17",
+  "section": "§5",
+  "text": "An unmodified application of the BCMS process reference model is inadequate; customization of BCMS processes according to the organization's specific needs is imperative.",
+  "ko": "BCMS 프로세스 참조모델을 수정 없이 적용하는 것은 부적절하며, 조직의 요구에 맞춘 BCMS 프로세스의 맞춤화가 필수적이다.",
+  "use": "연결 목록의 조직별 조정 필요성"
+ },
+ {
+  "id": "A09",
+  "source": "Arias",
+  "pages": "10",
+  "section": "Figure 4",
+  "text": "Regularity – interrelated and interacting tasks are repeated on a regular basis.",
+  "ko": "규칙성 – 상호 관련되고 상호작용하는 과업이 정기적으로 반복된다.",
+  "use": "종합 문항 G06 근거"
+ },
+ {
+  "id": "A10",
+  "source": "Arias",
+  "pages": "10",
+  "section": "Figure 4",
+  "text": "Accountability/responsibility – business continuity manager is the process owner or process manager and the process is a core competency of the BCMS.",
+  "ko": "책임성 – 업무연속성 관리자가 프로세스 소유자 또는 관리자이며 해당 프로세스는 BCMS의 핵심 역량이다.",
+  "use": "종합 문항 G04 근거"
+ },
+ {
+  "id": "A11",
+  "source": "Arias",
+  "pages": "15",
+  "section": "§4.3",
+  "text": "These requirements inform processes such as business impact assessment and criticality analysis, risk assessment, internal audits, and supply chain management.",
+  "ko": "이 요구사항들은 BIA·중요도 분석, 리스크평가, 내부감사, 공급망관리와 같은 프로세스에 정보를 제공한다.",
+  "use": "L01, L02, L04, L05"
+ },
+ {
+  "id": "A12",
+  "source": "Arias",
+  "pages": "15",
+  "section": "§4.3",
+  "text": "The risk assessment process, which focuses on identifying potential disruptions, relies on the outcomes of the business impact assessment and criticality analysis as its foundation.",
+  "ko": "잠재적 중단을 식별하는 데 초점을 둔 리스크평가 프로세스는 BIA·중요도 분석의 결과를 기반으로 한다.",
+  "use": "L03"
+ },
+ {
+  "id": "A13",
+  "source": "Arias",
+  "pages": "15",
+  "section": "§4.3",
+  "text": "The final result is a documented statement accompanied by a rationale outlining the organization's business continuity requirements.",
+  "ko": "최종 결과는 조직의 업무연속성 요구사항을 개괄하는, 근거가 첨부된 문서화된 진술이다.",
+  "use": "L03, L06 (BIA 산출물의 정의)"
+ },
+ {
+  "id": "A14",
+  "source": "Arias",
+  "pages": "15",
+  "section": "§4.3",
+  "text": "After the completion of the business impact assessment and criticality analysis process, the approved business continuity requirements guide the determination and selection of suitable BC strategies and solutions",
+  "ko": "BIA·중요도 분석 프로세스가 완료된 후, 승인된 업무연속성 요구사항이 적절한 BC 전략·솔루션의 결정과 선정을 안내한다.",
+  "use": "L06"
+ },
+ {
+  "id": "A15",
+  "source": "Arias",
+  "pages": "15",
+  "section": "§4.3",
+  "text": "This process ensures that the BC strategies, solutions, and necessary changes are executed as planned.",
+  "ko": "이 프로세스는 BC 전략, 솔루션 및 필요한 변경이 계획대로 실행되도록 보장한다.",
+  "use": "L07"
+ },
+ {
+  "id": "A16",
+  "source": "Arias",
+  "pages": "15",
+  "section": "§4.3",
+  "text": "Corresponding BC plans and procedures, derived from the identified BC strategies and solutions, are developed within the process of developing BC plans and procedures.",
+  "ko": "식별된 BC 전략·솔루션에서 도출된 해당 BC 계획·절차는 BC 계획·절차 개발 프로세스 안에서 개발된다.",
+  "use": "L08"
+ },
+ {
+  "id": "A17",
+  "source": "Arias",
+  "pages": "15",
+  "section": "§4.3",
+  "text": "Furthermore, it includes risks associated with proposed changes, providing essential input for both communication activities and the development of business continuity plans and procedures.",
+  "ko": "또한 (리스크평가는) 제안된 변경과 관련된 리스크를 포함하며, 커뮤니케이션 활동과 업무연속성 계획·절차 개발 모두에 필수적인 입력을 제공한다.",
+  "use": "L09"
+ },
+ {
+  "id": "A18",
+  "source": "Arias",
+  "pages": "16",
+  "section": "§4.3",
+  "text": "Outputs from this process include documented resources for implementing and running selected strategies, as well as resources for operating core BCMS processes, along with reports on resource utilization for BCMS core processes and the customer relationship management process",
+  "ko": "이 프로세스(자원관리)의 산출물에는 선정된 전략의 이행·운영을 위한 문서화된 자원, 핵심 BCMS 프로세스 운영을 위한 자원, 그리고 BCMS 핵심 프로세스와 고객관계관리 프로세스에 대한 자원 사용 보고가 포함된다.",
+  "use": "L10, L30, L31"
+ },
+ {
+  "id": "A19",
+  "source": "Arias",
+  "pages": "15",
+  "section": "§4.3",
+  "text": "The activation of certain BC strategies and solutions is triggered when required, typically in response to a disruptive event, through the execution of BC plans and procedures.",
+  "ko": "특정 BC 전략·솔루션의 가동은 필요 시, 통상 중단 사건에 대응하여, BC 계획·절차의 실행을 통해 개시된다.",
+  "use": "L12"
+ },
+ {
+  "id": "A20",
+  "source": "Arias",
+  "pages": "15",
+  "section": "§4.3",
+  "text": "facilitating appropriate alerting of potentially affected parties and coordinating responses within the organization's BC plans and procedures",
+  "ko": "(경보·커뮤니케이션은) 영향을 받을 수 있는 당사자에 대한 적절한 경보를 촉진하고 조직의 BC 계획·절차 안에서 대응을 조정한다.",
+  "use": "L12, L13"
+ },
+ {
+  "id": "A21",
+  "source": "Arias",
+  "pages": "15",
+  "section": "§4.3",
+  "text": "It includes two primary subprocesses: the warning and communication process and the recovery process.",
+  "ko": "(사고·비상 대응 프로세스는) 경보·커뮤니케이션 프로세스와 복구 프로세스라는 두 가지 주요 하위 프로세스를 포함한다.",
+  "use": "L13, L14"
+ },
+ {
+  "id": "A22",
+  "source": "Arias",
+  "pages": "15",
+  "section": "§4.3",
+  "text": "The recovery process, on the other hand, involves restoring and resuming regular business activities from the state of temporary measures that have been adopted to support normal operations during and after a disruption.",
+  "ko": "복구 프로세스는 중단 중·후 정상 운영을 지원하기 위해 채택한 임시 조치 상태에서 일상 업무 활동을 회복·재개하는 것을 포함한다.",
+  "use": "L14"
+ },
+ {
+  "id": "A23",
+  "source": "Arias",
+  "pages": "15",
+  "section": "§4.3",
+  "text": "The process of exercising BC plans and procedures ensures that BC strategies and solutions and their corresponding BC plans and procedures, including warning and communication procedures, are tested regularly to validate their effectiveness and prompt any necessary adjustments or enhancements.",
+  "ko": "BC 계획·절차 훈련·연습 프로세스는 BC 전략·솔루션과 이에 대응하는 BC 계획·절차(경보·커뮤니케이션 절차 포함)가 정기적으로 시험되어 그 유효성을 검증하고 필요한 조정·개선을 촉구하도록 보장한다.",
+  "use": "L15, L16"
+ },
+ {
+  "id": "A24",
+  "source": "Arias",
+  "pages": "15",
+  "section": "§4.3",
+  "text": "a business continuity awareness, training, and education program is developed and implemented to foster necessary awareness and competence among personnel",
+  "ko": "업무연속성 인식·훈련·교육 프로그램이 개발·이행되어 인력의 필요한 인식과 역량을 키운다.",
+  "use": "L17(연결 자체를 서술하지는 않음)"
+ },
+ {
+  "id": "A25",
+  "source": "Arias",
+  "pages": "16",
+  "section": "§4.3",
+  "text": "Results from the performance evaluation process, the internal audit process, and the supply chain management process are used to improve the effectiveness, efficiency, suitability, and adequacy of the BCMS and the strategies, solutions, plans, and procedures.",
+  "ko": "성과평가, 내부감사, 공급망관리 프로세스의 결과는 BCMS와 전략·솔루션·계획·절차의 효과성, 효율성, 적합성, 충분성을 개선하는 데 사용된다.",
+  "use": "L18, L19, L20"
+ },
+ {
+  "id": "A26",
+  "source": "Arias",
+  "pages": "16",
+  "section": "§4.3 (변경관리 산출물 2번째)",
+  "text": "Proposed and necessary changes, as well as results of changes (for and from the risk assessment process);",
+  "ko": "제안된 변경과 필요한 변경, 그리고 변경의 결과(리스크평가 프로세스로 가는 것과 그로부터 오는 것).",
+  "use": "L21"
+ },
+ {
+  "id": "A27",
+  "source": "Arias",
+  "pages": "16",
+  "section": "§4.3 (변경관리 산출물 3번째)",
+  "text": "Initiation of risk assessment in response to significant proposed or occurring changes; and",
+  "ko": "중대한 제안·발생 변경에 대응한 리스크평가의 개시.",
+  "use": "L21"
+ },
+ {
+  "id": "A28",
+  "source": "Arias",
+  "pages": "16",
+  "section": "§4.3 (변경관리 산출물 1번째)",
+  "text": "Necessary changes (for the process of controlling documented information);",
+  "ko": "필요한 변경(문서화된 정보 통제 프로세스를 위한 것).",
+  "use": "L22"
+ },
+ {
+  "id": "A29",
+  "source": "Arias",
+  "pages": "16",
+  "section": "§4.3 (변경관리 산출물 4번째)",
+  "text": "The results of changes to the incident and emergency handling process or the process of exercising BC plans and procedures—as those processes initiated them.",
+  "ko": "사고·비상 대응 프로세스 또는 BC 계획·절차 훈련·연습 프로세스에 대한 변경의 결과 — 해당 프로세스들이 변경을 개시한 경우.",
+  "use": "L23, L24, L25, L26"
+ },
+ {
+  "id": "A30",
+  "source": "Arias",
+  "pages": "16",
+  "section": "§4.3",
+  "text": "The outcomes of nearly all BCMS processes are communicated centrally to stakeholders external to the BCMS as part of the consultation and communication process.",
+  "ko": "거의 모든 BCMS 프로세스의 결과는 협의·커뮤니케이션 프로세스의 일부로서 BCMS 외부의 이해관계자에게 중앙에서 전달된다.",
+  "use": "L27"
+ },
+ {
+  "id": "A31",
+  "source": "Arias",
+  "pages": "16",
+  "section": "§4.3",
+  "text": "These reports and identified requirements serve as inputs for the BC governance process.",
+  "ko": "이 보고와 식별된 요구사항은 BC 거버넌스 프로세스의 입력으로 쓰인다.",
+  "use": "L28"
+ },
+ {
+  "id": "A32",
+  "source": "Arias",
+  "pages": "16",
+  "section": "§4.3",
+  "text": "operational management of customer satisfaction levels and continuous demonstration of the added value of investments in business continuity need to be realized",
+  "ko": "고객 만족 수준의 운영적 관리와 업무연속성 투자의 부가가치에 대한 지속적 입증이 실현되어야 한다(고객관계관리 프로세스에서 수행).",
+  "use": "L31"
+ },
+ {
+  "id": "A33",
+  "source": "Arias",
+  "pages": "14",
+  "section": "§4.3",
+  "text": "The business continuity governance process, in particular, ensures that the BCMS matches the goals and requirements of the stakeholders responsible for oversight.",
+  "ko": "BC 거버넌스 프로세스는 특히 BCMS가 감독 책임이 있는 이해관계자의 목표와 요구사항에 부합하도록 보장한다.",
+  "use": "L29"
+ },
+ {
+  "id": "A34",
+  "source": "Arias",
+  "pages": "14",
+  "section": "§4.3",
+  "text": "The business continuity policy management process facilitates the systematic development, maintenance, and preservation of business continuity policies",
+  "ko": "BC 정책관리 프로세스는 업무연속성 정책의 체계적인 개발·유지·보존을 촉진한다.",
+  "use": "L29"
+ },
+ {
+  "id": "A35",
+  "source": "Arias",
+  "pages": "15",
+  "section": "§4.3",
+  "text": "This process also ensures that BC policies are accessible to, and clearly understood by, the intended audience.",
+  "ko": "이 프로세스는 또한 BC 정책이 대상자에게 접근 가능하고 명확히 이해되도록 보장한다.",
+  "use": "L29"
+ },
+ {
+  "id": "A36",
+  "source": "Arias",
+  "pages": "15",
+  "section": "§4.3",
+  "text": "The solution implementation management process involves initiating and verifying BC strategies, solutions, and changes that may result thereof.",
+  "ko": "솔루션 이행관리 프로세스는 BC 전략·솔루션 및 그로부터 발생할 수 있는 변경을 개시하고 검증하는 것을 포함한다.",
+  "use": "L07 (확인 상태 근거)"
+ },
+ {
+  "id": "A37",
+  "source": "Arias",
+  "pages": "15",
+  "section": "§4.3",
+  "text": "This procedure involves systematic prioritization of products, services, processes, and activities, followed by comprehensive analysis, consolidation, and securing of executive approval of the BIA findings.",
+  "ko": "이 절차는 제품·서비스·프로세스·활동의 체계적 우선순위화, 이어지는 종합 분석·통합, 그리고 BIA 결과에 대한 경영진 승인 확보를 포함한다.",
+  "use": "L06 (BIA 결과의 \"승인\")"
+ },
+ {
+  "id": "A38",
+  "source": "Arias",
+  "pages": "16",
+  "section": "§4.3",
+  "text": "Resources necessary for executing strategies and BCMS processes are identified, allocated, and monitored within the resource management process.",
+  "ko": "전략과 BCMS 프로세스를 실행하는 데 필요한 자원은 자원관리 프로세스 안에서 식별·배정·모니터링된다.",
+  "use": "L10, L30"
+ },
+ {
+  "id": "A39",
+  "source": "Arias",
+  "pages": "16",
+  "section": "§4.3",
+  "text": "outsourced services must be assessed, analyzed, and controlled regarding business continuity considerations",
+  "ko": "외주 서비스는 업무연속성 관점에서 평가·분석·통제되어야 한다.",
+  "use": "L05 (측정 지표화 근거)"
+ },
+ {
+  "id": "A40",
+  "source": "Arias",
+  "pages": "16",
+  "section": "§4.3",
+  "text": "the consultation and communication process represents the general mode of communication even in the absence of such an event",
+  "ko": "협의·커뮤니케이션 프로세스는 그러한 사건이 없을 때에도 일반적인 커뮤니케이션 방식을 나타낸다.",
+  "use": "L27"
+ },
+ {
+  "id": "A41",
+  "source": "Arias",
+  "pages": "16",
+  "section": "§4.3",
+  "text": "The process of controlling documented information involves identifying, creating, updating, and controlling information essential for the effectiveness of the BCMS.",
+  "ko": "문서화된 정보 통제 프로세스는 BCMS의 효과성에 필수적인 정보를 식별·작성·갱신·통제하는 것을 포함한다.",
+  "use": "\"갱신\" 상태 정의의 근거 / L22"
+ },
+ {
+  "id": "A42",
+  "source": "Arias",
+  "pages": "4",
+  "section": "§2.1",
+  "text": "In essence, a process represents a cohesive set of interrelated or interacting activities to transform inputs into outputs",
+  "ko": "본질적으로 프로세스는 입력을 출력으로 전환하는, 상호 관련되거나 상호작용하는 활동의 응집된 집합이다.",
+  "use": "\"프로세스(객체)\" 정의"
+ },
+ {
+  "id": "A43",
+  "source": "Arias",
+  "pages": "11",
+  "section": "§4.2",
+  "text": "According to [32,33], the 80% threshold for consensus is commonly used and generally perceived as fair.",
+  "ko": "[32,33]에 따르면 합의의 80% 기준은 흔히 사용되며 일반적으로 공정하다고 인식된다.",
+  "use": "검증 계획의 80% 합의 기준"
+ },
+ {
+  "id": "A44",
+  "source": "Arias",
+  "pages": "11",
+  "section": "§4.2",
+  "text": "Category 1 processes represent those clearly identified as BCMS core processes by 80% or more of the experts. Category 2 processes were not clearly identified as BCMS core processes, recognized by 20% to 80% of the experts. Category 3 processes were identified as not being BCMS core processes, recognized by less than 20% of the experts.",
+  "ko": "범주 1은 전문가 80% 이상이 BCMS 핵심 프로세스로 명확히 식별한 것, 범주 2는 20~80%가 인식한 것, 범주 3은 20% 미만이 인식한 것이다.",
+  "use": "검증 계획의 채택/토론/삭제 3단계 판정 틀"
+ },
+ {
+  "id": "A45",
+  "source": "Arias",
+  "pages": "12",
+  "section": "§4.2",
+  "text": "even if no consensus was reached within the interviewed experts, the authors assert the presence of both processes as core components of the BCMS, based on their explicit definition in [2,21].",
+  "ko": "전문가 합의에 이르지 못했더라도, 저자들은 ISO 22301 등의 명시적 정의에 근거해 두 프로세스를 BCMS의 핵심 구성요소로 본다.",
+  "use": "합의 미달 프로세스도 표준 근거로 유지한 선례"
+ },
+ {
+  "id": "A46",
+  "source": "Arias",
+  "pages": "16",
+  "section": "§4.3",
+  "text": "This is realized within the continual improvement process.",
+  "ko": "이는 지속적 개선 프로세스 안에서 실현된다.",
+  "use": "L18, L19, L20 (도착 프로세스)"
+ },
+ {
+  "id": "A47",
+  "source": "Arias",
+  "pages": "16",
+  "section": "§4.3",
+  "text": "It encompasses the communication of risks and reports concerning BC management.",
+  "ko": "(협의·커뮤니케이션 프로세스는) 리스크와 BC 관리에 관한 보고의 커뮤니케이션을 포함한다.",
+  "use": "L28 (\"These reports\"의 지시 대상)"
+ },
+ {
+  "id": "A48",
+  "source": "Arias",
+  "pages": "10",
+  "section": "§4.1",
+  "text": "Therefore, the BCMS planning process is categorized as a project.",
+  "ko": "따라서 BCMS 계획 프로세스는 프로젝트로 분류된다.",
+  "use": "객체 22개에서 BCMS 계획을 제외한 근거"
+ },
+ {
+  "id": "B01",
+  "source": "Białas",
+  "pages": "1",
+  "section": "§1",
+  "text": "BCMS encompasses many different processes of different character, interrelated in a complex way.",
+  "ko": "BCMS는 서로 다른 성격의, 복잡하게 상호 관련된 많은 프로세스를 포괄한다.",
+  "use": "연계성 정의의 근거"
+ },
+ {
+  "id": "B02",
+  "source": "Białas",
+  "pages": "2",
+  "section": "§2.1",
+  "text": "The ontology domain questions that the ontology related knowledge base is able to answer are called competency questions",
+  "ko": "온톨로지 관련 지식베이스가 답할 수 있는 온톨로지 영역의 질문을 competency question이라 한다.",
+  "use": "competency question 정의(연결 시트 CQ 열)"
+ },
+ {
+  "id": "B03",
+  "source": "Białas",
+  "pages": "2",
+  "section": "§2.1",
+  "text": "The answers define the scope of the ontology.",
+  "ko": "그 답이 온톨로지의 범위를 정의한다.",
+  "use": "CQ로 측정 범위를 정하는 방식"
+ },
+ {
+  "id": "B04",
+  "source": "Białas",
+  "pages": "3",
+  "section": "§2.5",
+  "text": "i.e. relationships between an individual member of the given class (the object) and other individuals",
+  "ko": "즉, 해당 클래스의 개체(객체)와 다른 개체들 사이의 관계.",
+  "use": "object-type slot 정의(연결 = 관계)"
+ },
+ {
+  "id": "B05",
+  "source": "Białas",
+  "pages": "3",
+  "section": "§2.5",
+  "text": "An instance-type slot is attached to the classes which are called a domain. The classes indicated by this slot are called a range.",
+  "ko": "instance-type slot이 부착되는 클래스를 domain이라 하고, 이 slot이 가리키는 클래스를 range라 한다.",
+  "use": "연결의 출발(domain)과 도착(range) 정의"
+ },
+ {
+  "id": "B06",
+  "source": "Białas",
+  "pages": "3",
+  "section": "§2.5",
+  "text": "i.e. intrinsic or extrinsic properties of the individuals of the most elementary classes",
+  "ko": "즉, 가장 기초적인 클래스의 개체가 지니는 내재적·외재적 속성.",
+  "use": "data-type slot 정의(반영·확인·갱신을 연결의 속성으로 두는 근거)"
+ },
+ {
+  "id": "B07",
+  "source": "Białas",
+  "pages": "3",
+  "section": "§2.6",
+  "text": "The individuals with filled-in slots represent the key BCM artefacts, mostly documents, of the BCMO related knowledge base.",
+  "ko": "slot이 채워진 개체는 BCMO 지식베이스의 핵심 BCM 산출물(주로 문서)을 나타낸다.",
+  "use": "산출물(artefact) 개념"
+ },
+ {
+  "id": "B08",
+  "source": "Białas",
+  "pages": "3",
+  "section": "§2.7",
+  "text": "During the validation process the user checks if the right structures of individuals are composed, if they have assumed properties, if the needed information can be retrieved properly by queries from the knowledge database, and if the forms are properly defined.",
+  "ko": "검증 과정에서 사용자는 개체의 올바른 구조가 구성되었는지, 가정된 속성을 갖는지, 필요한 정보가 질의로 올바르게 검색되는지, 입력 양식이 적절히 정의되었는지를 확인한다.",
+  "use": "검증 계획 6.1·6.5 방법의 근거"
+ },
+ {
+  "id": "B09",
+  "source": "Białas",
+  "pages": "2",
+  "section": "§2.3",
+  "text": "The terms are grouped around four phases of the PDCA (Plan-Do-Check-Act) management model",
+  "ko": "용어는 PDCA 관리 모델의 네 단계를 중심으로 묶인다.",
+  "use": "Białas의 분류 방식(참고)"
+ },
+ {
+  "id": "B10",
+  "source": "Białas",
+  "pages": "6",
+  "section": "§2.8 (Fig.4 설명)",
+  "text": "resources required for these services resumption",
+  "ko": "이들 서비스 재개에 필요한 자원",
+  "use": "L11(BIA 보고서와 복구 자원의 질의 연결)"
+ },
+ {
+  "id": "B11",
+  "source": "Białas",
+  "pages": "6",
+  "section": "§2.8 (Fig.4 설명)",
+  "text": "looks for business impact analysis (BIA) reports related to the two following issues",
+  "ko": "(업무연속성 관리자가) 다음 두 가지 사안과 관련된 BIA 보고서를 찾는다.",
+  "use": "L11"
+ },
+ {
+  "id": "B12",
+  "source": "Białas",
+  "pages": "5",
+  "section": "§2.8 (Fig.3 설명)",
+  "text": "Please note the person responsible for trainings, expressed by a certain role, engaged resources for trainings, needs, programs, detailed activities, results and records",
+  "ko": "훈련 책임자(역할로 표현), 훈련에 투입된 자원, 필요, 프로그램, 세부 활동, 결과, 기록에 유의하라.",
+  "use": "L17(교육의 \"필요\"가 별도 항목으로 존재)"
+ },
+ {
+  "id": "B13",
+  "source": "Białas",
+  "pages": "4-5",
+  "section": "§2.8 (Fig.2 설명)",
+  "text": "Individuals included in slots represent particular issues from the phase “Plan” specified by standard: general requirements, business continuity scope, objectives, policy and plan, suppliers and outsourced activities, provision of resources, training, awareness, embedding BCM in the organization’s culture, documentation and records.",
+  "ko": "slot에 포함된 개체는 표준이 규정한 \"Plan\" 단계의 개별 사안(일반 요구사항, 범위, 목표, 정책과 계획, 공급자·외주, 자원 제공, 교육, 인식, 조직문화 내재화, 문서·기록)을 나타낸다.",
+  "use": "L29(정책과 목표가 같은 단계의 병렬 항목)"
+ },
+ {
+  "id": "B14",
+  "source": "Białas",
+  "pages": "6",
+  "section": "§3",
+  "text": "it is still a prototype which requires: knowledge base extension, further development, introducing more sophisticated competency questions, and more validation on real data",
+  "ko": "(BCMO는) 여전히 프로토타입이며 지식베이스 확장, 추가 개발, 더 정교한 competency question 도입, 실제 데이터에 대한 추가 검증이 필요하다.",
+  "use": "Białas의 한계(본 연구가 방법만 차용하는 이유)"
+ },
+ {
+  "id": "B15",
+  "source": "Białas",
+  "pages": "1",
+  "section": "초록",
+  "text": "compliant with the BS 25999 standard",
+  "ko": "BS 25999 표준에 부합하는",
+  "use": "Białas가 BS 25999 기반임"
+ },
+ {
+  "id": "B16",
+  "source": "Białas",
+  "pages": "4",
+  "section": "§2.8 (Fig.1 설명)",
+  "text": "supportedByResource slot contains three individuals of resources used to manage and maintain BCMS within this organization",
+  "ko": "supportedByResource slot은 이 조직 안에서 BCMS를 관리·유지하는 데 쓰이는 세 개의 자원 개체를 담는다.",
+  "use": "L10(자원이 BCMS를 지원한다는 구조)"
+ }
+]

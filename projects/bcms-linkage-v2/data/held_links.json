@@ -1,0 +1,50 @@
+[
+ {
+  "id": "H01",
+  "source": "INC",
+  "target": "PLAN",
+  "idea": "사고 대응 경험을 BC 계획·절차 개정에 반영",
+  "reason": "Arias에는 연습(EXE)→계획(L16)만 서술되고 사고 대응→계획 환류는 서술이 없음. 사고 결과는 변경관리(L23)를 거쳐 반영되는 경로만 근거가 있음.",
+  "decision": "연구자 결정 필요"
+ },
+ {
+  "id": "H02",
+  "source": "RA",
+  "target": "CHG",
+  "idea": "리스크평가 결과를 변경 판단에 사용",
+  "reason": "A26의 \"for and from the risk assessment process\"는 양방향을 시사하나 방향이 문장에서 분리되지 않음. 현재는 CHG→RA(L21)만 채택.",
+  "decision": "연구자 결정 필요"
+ },
+ {
+  "id": "H03",
+  "source": "EXE",
+  "target": "AWR",
+  "idea": "연습 결과를 교육 내용에 반영",
+  "reason": "두 논문에 서술 없음. L17(PLAN→AWR)과 중복 가능성.",
+  "decision": "제외 권고"
+ },
+ {
+  "id": "H04",
+  "source": "GOV",
+  "target": "CRM",
+  "idea": "거버넌스와 고객관계관리의 관계",
+  "reason": "A32는 두 프로세스를 \"In addition to\"로 병렬 서술할 뿐 연결을 서술하지 않음.",
+  "decision": "제외 권고"
+ },
+ {
+  "id": "H05",
+  "source": "CI",
+  "target": "PERF",
+  "idea": "개선 결과를 성과평가 지표에 반영",
+  "reason": "A25는 성과평가→개선 방향만 서술. 개선 후 지표 갱신은 서술 없음.",
+  "decision": "제외 권고"
+ },
+ {
+  "id": "H06",
+  "source": "DOC",
+  "target": "전 프로세스",
+  "idea": "문서화된 정보 통제가 모든 프로세스를 지원",
+  "reason": "A41은 정보 통제의 내용만 서술하고 프로세스별 연결은 CHG→DOC(L22)만 서술.",
+  "decision": "제외 권고"
+ }
+]
