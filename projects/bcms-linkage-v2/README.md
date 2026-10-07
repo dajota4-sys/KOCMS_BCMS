@@ -24,8 +24,10 @@
 | `scripts/verify_quotes.py` | 인용문·Table 2–5 수치를 PDF 원문과 대조(+ 데이터 정합성 검사) |
 | `scripts/mkmap.py` | 온톨로지 맵 PNG 생성 |
 | `scripts/build_all.py` | 엑셀·근거정의서(md)·설문 이관용 파일 생성 |
+| `scripts/build_story_deck.js` | 이야기식 PPT 생성(Node, pptxgenjs·react-icons·sharp 필요) |
 | `outputs/BCMS_연계성_V2.xlsx` | **문항은행 + 온톨로지 맵 + 응답 입력·점수·검증 시트(16개 시트)** |
 | `outputs/BCMS_온톨로지맵_V2.png` | 온톨로지 맵 그림 |
+| `outputs/BCMS_연계성_이야기로_이해하기.pptx` | **이야기식 설명 PPT(17장, 발표자 노트 포함)** — 릴레이 바통 비유로 연구 흐름과 엑셀 공부 순서를 설명 |
 | `outputs/BCMS_연계성_V2_근거정의서.md` | 연결별 인용·연구자 의견·문항 전체 (논문 부록 초안으로 사용 가능) |
 | `outputs/quote_verification_report.md` | 인용문 원문 대조 보고서(PDF 해시 포함) |
 | `survey/` | 설문 이관용 `survey_items_v2.json/csv`와 `SURVEY_SPEC.md` |
