@@ -1,0 +1,196 @@
+[
+ {
+  "id": "V01",
+  "verb": "입력된다·활용된다",
+  "predicate": "isInputTo",
+  "definition": "S의 산출물이 T의 입력·기준으로 쓰인다",
+  "test": "T를 수행할 때 S의 산출물이 입력으로 쓰이는가?",
+  "quotes": [
+   "A11",
+   "A17",
+   "A31"
+  ],
+  "arias_verbs": "inform / essential input / serve as inputs",
+  "attachment_map": "첨부 문서의 \"입력된다/활용된다\"",
+  "links": [
+   "L01",
+   "L02",
+   "L04",
+   "L05",
+   "L09",
+   "L11",
+   "L17",
+   "L28"
+  ]
+ },
+ {
+  "id": "V02",
+  "verb": "근거가 된다",
+  "predicate": "isBasisFor",
+  "definition": "S의 결과가 T의 결정·선정의 근거(기준)가 된다",
+  "test": "T의 결정이 S의 결과를 근거로 하는가?",
+  "quotes": [
+   "A12",
+   "A14"
+  ],
+  "arias_verbs": "relies on … as its foundation / guide the determination and selection",
+  "attachment_map": "첨부 문서의 \"근거가 된다\"(일부 \"제약한다\")",
+  "links": [
+   "L03",
+   "L06"
+  ]
+ },
+ {
+  "id": "V03",
+  "verb": "도출·이행된다",
+  "predicate": "isElaboratedInto",
+  "definition": "S의 내용이 T로 구체화·도출되거나 T에서 실행된다",
+  "test": "T의 내용이 S에서 도출되거나 S를 실행하는가?",
+  "quotes": [
+   "A16",
+   "A15",
+   "A19"
+  ],
+  "arias_verbs": "derived from / executed as planned / through the execution of",
+  "attachment_map": "(Arias에서 추가한 동사)",
+  "links": [
+   "L07",
+   "L08",
+   "L12",
+   "L29"
+  ]
+ },
+ {
+  "id": "V04",
+  "verb": "시험·검증된다",
+  "predicate": "isVerifiedBy",
+  "definition": "S가 T에서 시험·검증된다",
+  "test": "T가 S의 유효성을 시험·평가하는가?",
+  "quotes": [
+   "A23"
+  ],
+  "arias_verbs": "tested regularly to validate their effectiveness",
+  "attachment_map": "첨부 문서의 \"검증한다\"",
+  "links": [
+   "L15"
+  ]
+ },
+ {
+  "id": "V05",
+  "verb": "수행을 촉발한다",
+  "predicate": "triggers",
+  "definition": "S의 사건·결과가 T의 수행을 개시시킨다",
+  "test": "S가 일어나면 T가 시작되는가?",
+  "quotes": [
+   "A27",
+   "A29"
+  ],
+  "arias_verbs": "initiation of / as those processes initiated them",
+  "attachment_map": "첨부 문서의 \"변경을 촉발한다\"",
+  "links": [
+   "L21",
+   "L23",
+   "L24"
+  ]
+ },
+ {
+  "id": "V06",
+  "verb": "개정·갱신한다",
+  "predicate": "revises",
+  "definition": "S의 결과·승인된 변경이 T의 내용을 개정·갱신한다",
+  "test": "S의 결과가 T의 문서·절차를 바꾸는가?",
+  "quotes": [
+   "A23",
+   "A28",
+   "A41"
+  ],
+  "arias_verbs": "prompt any necessary adjustments / necessary changes (for DOC) / updating",
+  "attachment_map": "첨부 문서의 \"개정·갱신한다\"",
+  "links": [
+   "L16",
+   "L22"
+  ]
+ },
+ {
+  "id": "V07",
+  "verb": "환류된다",
+  "predicate": "feedsBackTo",
+  "definition": "S의 결과가 T(개선·재수정)로 되돌아간다",
+  "test": "S의 결과가 개선·재수정 대상(T)으로 되돌아가는가?",
+  "quotes": [
+   "A25",
+   "A46",
+   "A29"
+  ],
+  "arias_verbs": "are used to improve / results of changes … as those processes initiated them",
+  "attachment_map": "첨부 문서의 \"환류된다\"",
+  "links": [
+   "L18",
+   "L19",
+   "L20",
+   "L25",
+   "L26"
+  ]
+ },
+ {
+  "id": "V08",
+  "verb": "포함한다",
+  "predicate": "hasSubprocess",
+  "definition": "T는 S의 하위 프로세스로서 S 안에서 수행된다",
+  "test": "T가 S의 일부로서 S 안에서 수행되는가?",
+  "quotes": [
+   "A21"
+  ],
+  "arias_verbs": "includes two primary subprocesses",
+  "attachment_map": "(Arias에서 추가한 동사)",
+  "links": [
+   "L13",
+   "L14"
+  ]
+ },
+ {
+  "id": "V09",
+  "verb": "제공한다",
+  "predicate": "supplies",
+  "definition": "S가 T에 자원 또는 자원 관련 보고를 제공한다",
+  "test": "T가 S로부터 자원 또는 자원 사용 보고를 받는가?",
+  "quotes": [
+   "A18"
+  ],
+  "arias_verbs": "outputs … include documented resources / reports on resource utilization",
+  "attachment_map": "(Arias에서 추가한 동사)",
+  "links": [
+   "L10",
+   "L30",
+   "L31"
+  ]
+ },
+ {
+  "id": "V10",
+  "verb": "승인한다",
+  "predicate": "approves",
+  "definition": "S가 T의 결과를 승인한다",
+  "test": "S가 T의 결과를 승인하는가?",
+  "quotes": [
+   "A37"
+  ],
+  "arias_verbs": "securing of executive approval of the BIA findings",
+  "attachment_map": "첨부 문서의 \"승인한다\" — 이번 연결 31개에는 사용하지 않음",
+  "links": []
+ },
+ {
+  "id": "V11",
+  "verb": "전달된다",
+  "predicate": "isCommunicatedTo",
+  "definition": "S의 결과가 T로 전달·보고된다",
+  "test": "S의 결과가 T(이해관계자 등)에게 전달되는가?",
+  "quotes": [
+   "A30"
+  ],
+  "arias_verbs": "are communicated centrally to stakeholders",
+  "attachment_map": "(Arias에서 추가한 동사)",
+  "links": [
+   "L27"
+  ]
+ }
+]

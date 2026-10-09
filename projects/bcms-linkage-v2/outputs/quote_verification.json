@@ -1,11 +1,13 @@
 {
- "date": "2026-10-06",
+ "date": "2026-10-09",
+ "external_sources": 12,
+ "external_sources_verbatim_verified": 0,
  "pdf_sha256": {
   "Arias": "d9fc2a3c7a490e0c9dc3dc442a8b771cb481e59d0b5e2db2dc772c79608f144e",
   "Białas": "b298d8eccf6b1a57183c1b8e40480af2c953e9b057ef6bacc6f769751d4a7f51"
  },
- "quotes_total": 64,
- "quotes_ok": 64,
+ "quotes_total": 72,
+ "quotes_ok": 72,
  "objects_total": 22,
  "objects_ok": 22,
  "failures": [],
@@ -390,6 +392,54 @@
   },
   {
    "id": "B16",
+   "source": "Białas",
+   "pages": "4",
+   "ok": true
+  },
+  {
+   "id": "A49",
+   "source": "Arias",
+   "pages": "9",
+   "ok": true
+  },
+  {
+   "id": "A50",
+   "source": "Arias",
+   "pages": "9",
+   "ok": true
+  },
+  {
+   "id": "A51",
+   "source": "Arias",
+   "pages": "16-17",
+   "ok": true
+  },
+  {
+   "id": "A52",
+   "source": "Arias",
+   "pages": "17",
+   "ok": true
+  },
+  {
+   "id": "A53",
+   "source": "Arias",
+   "pages": "18",
+   "ok": true
+  },
+  {
+   "id": "A54",
+   "source": "Arias",
+   "pages": "18",
+   "ok": true
+  },
+  {
+   "id": "B17",
+   "source": "Białas",
+   "pages": "5",
+   "ok": true
+  },
+  {
+   "id": "B18",
    "source": "Białas",
    "pages": "4",
    "ok": true

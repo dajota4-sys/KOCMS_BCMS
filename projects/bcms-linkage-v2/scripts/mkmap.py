@@ -15,8 +15,8 @@ LANE_BG=['#f4f7fb','#fbf6ee','#f2f8f3','#faf3f6','#f5f3fa']
 for i,x in enumerate(LX):
     d.rectangle([x-250,150,x+250,1880],fill=LANE_BG[i],outline='#d0d5dd')
     d.text((x,185),DOMAIN_ORDER[i],font=f(34),fill='#344054',anchor='mm')
-d.text((60,45),'BCMS 프로세스 연계성 온톨로지 맵 (V2)',font=f(52),fill='#101828')
-d.text((60,108),'객체 = Arias(2026) Table 5의 22개 프로세스 · 연결 = L01~L31 · 선 모양 = 증거유형(E1 직접 / E2 부분 / E3 가정)',font=f(26),fill='#475467')
+d.text((60,45),'BCMS 프로세스 연결 품질 온톨로지 맵 (V3)',font=f(52),fill='#101828')
+d.text((60,108),'객체 = Arias(2026) Table 5의 22개 프로세스 · 연결 = L01~L31 · 각 연결은 6개 품질 차원으로 측정 · 선 모양 = 증거유형(E1 직접 / E2 부분 / E3 가정)',font=f(26),fill='#475467')
 POS={'REQ':(0,400),'BIA':(0,740),'RA':(0,1100),
 'STR':(1,400),'IMP':(1,600),'PLAN':(1,850),'RES':(1,1250),
 'WARN':(2,420),'INC':(2,600),'REC':(2,810),'EXE':(2,1030),'AWR':(2,1170),
@@ -77,7 +77,7 @@ for l in links:
     styled(pts,col,5 if ev!='E3' else 5,dash)
     a1,a2=pts[-2],pts[-1]; ang=math.atan2(a2[1]-a1[1],a2[0]-a1[0]); L=28
     d.polygon([a2,(a2[0]-L*math.cos(ang-0.4),a2[1]-L*math.sin(ang-0.4)),(a2[0]-L*math.cos(ang+0.4),a2[1]-L*math.sin(ang+0.4))],fill=col)
-    labels.append((at(pts,LABT.get(l['id'],0.5)),l['id'],col,ev,l['relation']))
+    labels.append((at(pts,LABT.get(l['id'],0.5)),l['id'],col,ev,l['verb']))
 x0,y0,x1,y1=box('CORE')
 d.rounded_rectangle([x0,y0,x1,y1],radius=14,fill='#fffbe6',outline='#b54708',width=3,)
 d.text(((x0+x1)/2,(y0+y1)/2),'CORE · 핵심 BCMS 프로세스 전반 (집단 노드 — 연구자가 만든 가상 노드)',font=f(30),fill='#7a2e0e',anchor='mm')
@@ -99,4 +99,4 @@ x=160; ly2=2005
 for dn in DOMAIN_ORDER:
     d.line([x,ly2,x+50,ly2],fill=EC[dn],width=6); d.text((x+60,ly2),dn,font=f(22),fill='#344054',anchor='lm'); x+=420
 d.text((60,2055),'화살표 = S→T(출발→도착). 원 안 번호 = 연결 ID(연결 시트에서 인용 원문과 연구자 의견 확인). 연결·영역·관계유형·집단 노드는 연구자의 분류이며 인용 근거와 구분하여 연결 시트에 표기함. 쌍방향 선(L15/L16, L23/L25, L24/L26)은 서로 다른 연결.',font=f(20),fill='#667085')
-img.save(out('BCMS_온톨로지맵_V2.png')); print('saved')
+img.save(out('BCMS_온톨로지맵_V3.png')); print('saved')
