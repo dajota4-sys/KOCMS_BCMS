@@ -66,3 +66,4 @@ L01~L09 → L01~L09 / L10 → L11 / (신규) L10 / L11 → L12 / L12 → L13 / L
 - (V5 추가) `BCMS_연구배경·필요성·목적·방법_V5.pptx`(28쪽): 연구배경·필요성·목적·방법 + 학술근거 지도. 배경 인용 18개를 `data/v5/background_quotes.json`에 추가, `scripts/verify_background_quotes.py`로 PDF 문자열 대조 18/18 일치. 엑셀에 `배경인용18` 시트 추가.
 - (V5 추가) `BCMS_온톨로지맵_기초초안_V5.png`: 22개 객체는 Arias 기정으로 유지, 관계·개념·공백·경로·검증을 연구·학습 범위로 표시한 기초 초안 맵. 생성: scripts/mkontology_draft.py
 - (V5 추가) `BCMS_온톨로지맵_간단방향_V5.png`: 초기 발표용 간단 방향도(22개 객체 유지 → 연결 → 연결의 품질 → 설문 → 조직회복탄력성). 생성: scripts/mkontology_simple.py
+- (V5 추가) `BCMS_온톨로지맵_Arias연결_V5.png`(Arias가 서술한 연결 26개만 화살표로 표시, scripts/mkontology_arias.py), `outputs/arias_pages/Arias_p04·05·14·15·16.png`(Arias PDF 원문 쪽 캡처, 인용문 노란 표시·ID 태그, scripts/capture_pages.py).
