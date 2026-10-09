@@ -1,0 +1,50 @@
+[
+ {
+  "id": "O01",
+  "source": "ORAS",
+  "pages": "1",
+  "section": "Abstract",
+  "text": "A total of 130 responses to the survey were collected from 7 groups of organisations",
+  "ko": "설문에서 7개 조직군으로부터 총 130개 응답을 수집했다."
+ },
+ {
+  "id": "O02",
+  "source": "ORAS",
+  "pages": "6",
+  "section": "§2.2",
+  "text": "To describe the capabilities of the organisations 36 items were selected and split in three dimensions: anticipation, coping and adaptation. Each dimension is composed of 12 items.",
+  "ko": "조직의 역량을 기술하기 위해 36개 문항을 선정하여 예측(anticipation), 대응(coping), 적응(adaptation)의 세 차원으로 나누었다. 각 차원은 12개 문항으로 구성된다."
+ },
+ {
+  "id": "O03",
+  "source": "ORAS",
+  "pages": "11",
+  "section": "§3.1.1",
+  "text": "the two‐factor specification provided a consistently superior fit across all three dimensions",
+  "ko": "2요인 명세가 세 차원 모두에서 일관되게 더 우수한 적합도를 보였다."
+ },
+ {
+  "id": "O04",
+  "source": "ORAS",
+  "pages": "16",
+  "section": "§5",
+  "text": "A significant drawback of this research is the sample size (N = 131).",
+  "ko": "이 연구의 중요한 한계는 표본 크기(N = 131)이다."
+ },
+ {
+  "id": "O05",
+  "source": "ORAS",
+  "pages": "17",
+  "section": "§5",
+  "text": "The data we gathered with ORAS only suggests a possible link between an organisation's resilience level and its performance.",
+  "ko": "ORAS로 수집한 자료는 조직의 회복탄력성 수준과 성과 사이의 가능한 연결을 시사할 뿐이다."
+ },
+ {
+  "id": "O06",
+  "source": "ORAS",
+  "pages": "17",
+  "section": "§5",
+  "text": "the different parameters do not allow us to establish a definitive causal relationship",
+  "ko": "여러 모수는 확정적인 인과관계를 설정하도록 허용하지 않는다."
+ }
+]
