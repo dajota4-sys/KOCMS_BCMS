@@ -68,3 +68,4 @@ L01~L09 → L01~L09 / L10 → L11 / (신규) L10 / L11 → L12 / L12 → L13 / L
 - (V5 추가) `BCMS_온톨로지맵_간단방향_V5.png`: 초기 발표용 간단 방향도(22개 객체 유지 → 연결 → 연결의 품질 → 설문 → 조직회복탄력성). 생성: scripts/mkontology_simple.py
 - (V5 추가) `BCMS_온톨로지맵_Arias연결_V5.png`(Arias가 서술한 연결 26개만 화살표로 표시, scripts/mkontology_arias.py), `outputs/arias_pages/Arias_p04·05·14·15·16.png`(Arias PDF 원문 쪽 캡처, 인용문 노란 표시·ID 태그, scripts/capture_pages.py).
 - (V5 추가) `BCMS_연구모형_V5.pptx`(1쪽): 연계성 → 조직회복탄력성(ORAS) 사전가설 H1·H1a–c. ORAS 논문(Domínguez-Ortega 외 2026, JCCM 34:e70164) 인용 6개 PDF 대조 6/6 (data/v5/oras_quotes.json, scripts/verify_oras_quotes.py). ORAS 서지가 확인되어 Gate 6의 출처 항목 일부 해소(한국어 적용·판별타당도는 예정).
+- (V5 추가) `BCMS_연구모형_활용근거_V5.pptx`(1쪽): 연구 모형을 쓰는 이유 3가지와 설명 방법(개념 정의→가설 검증→해석, H1·H1a–c 연결 측면은 연구자 해석). ORAS 인용 10개 대조 10/10.
