@@ -66,6 +66,8 @@ sheet('인용지도',['코드','개념','역할','근거','위치','확인 수�
 # 4) 참고문헌
 rows=[[r['key'],r['full'],r['doi'],r['level'],r['use']] for r in ST['refs']]
 sheet('참고문헌',['본문 인용 표기','참고문헌','DOI','확인 수준','본 연구에서의 용도'],rows,[28,80,26,36,44],tab='FFE8A317',idx=6)
+BQ=json.load(open(os.path.join(ROOT,'data/v5/background_quotes.json'),encoding='utf-8'))
+sheet('배경인용18',['인용ID','출처','PDF 쪽','절','원문','참고 번역(연구자)','사용처','문자 대조'],[[q['id'],q['source'],q['pages'],q['section'],q['text'],q['ko'],q['use'],'문자 대조 일치 2026-10-09'] for q in BQ],[8,10,8,10,70,60,34,22],tab='FFE8A317',idx=wb.sheetnames.index('인용원문72')+1)
 # 5) 이미지
 ws=wb.create_sheet('관계MAP이미지',3); ws.sheet_properties.tabColor='FF245E94'
 img=XImg(os.path.join(ROOT,'outputs/BCMS_관계MAP_22x22_V5.png')); img.width=img.width*0.55; img.height=img.height*0.55; ws.add_image(img,'A1')

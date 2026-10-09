@@ -1,0 +1,164 @@
+[
+ {
+  "id": "A55",
+  "source": "Arias",
+  "pages": "1",
+  "section": "Abstract",
+  "text": "Currently, a standardized process reference model specifically tailored for the business continuity management system (BCMS) is absent.",
+  "ko": "현재 BCMS에 특화된 표준화된 프로세스 참조모델은 존재하지 않는다.",
+  "use": "배경·필요성: 참조모델 부재"
+ },
+ {
+  "id": "A56",
+  "source": "Arias",
+  "pages": "1",
+  "section": "Abstract",
+  "text": "Moreover, BCMS processes have not been a primary focus of ongoing research endeavors.",
+  "ko": "또한 BCMS 프로세스는 진행 중인 연구의 주된 초점이 아니었다.",
+  "use": "배경·필요성: 프로세스 연구 부족"
+ },
+ {
+  "id": "A57",
+  "source": "Arias",
+  "pages": "1",
+  "section": "§1",
+  "text": "Many organizations demonstrate a lack of preparedness and often fail to recognize the criticality of continuity",
+  "ko": "많은 조직이 대비 부족을 보이며 연속성의 중요성을 인식하지 못하는 경우가 많다.",
+  "use": "배경: 연속성 대비 부족"
+ },
+ {
+  "id": "A58",
+  "source": "Arias",
+  "pages": "1",
+  "section": "§1",
+  "text": "the capability of an organization to sustain the delivery of products or services at acceptable predefined levels following a disruptive incident",
+  "ko": "중단 사건 이후 허용 가능한 사전 정의 수준으로 제품·서비스 제공을 유지하는 조직의 능력(Arias가 ISO 22301·22313을 인용한 업무연속성 정의).",
+  "use": "배경: 업무연속성 정의"
+ },
+ {
+  "id": "A68",
+  "source": "Arias",
+  "pages": "1",
+  "section": "Abstract",
+  "text": "It aims to strengthen the resilience of organizations to cyber threats and to optimize the processes for effective management within the disaster management cycle.",
+  "ko": "이는 사이버 위협에 대한 조직의 회복탄력성을 강화하고 재난관리 주기 안에서 효과적 관리를 위한 프로세스를 최적화하는 것을 목표로 한다.",
+  "use": "배경: 회복탄력성과 BCMS 프로세스"
+ },
+ {
+  "id": "A69",
+  "source": "Arias",
+  "pages": "2",
+  "section": "§1",
+  "text": "These requirements cover planning, implementation, operation, and ongoing monitoring and improvement of a process-driven BCMS",
+  "ko": "이 요구사항은 프로세스 기반 BCMS의 계획, 이행, 운영, 지속적 모니터링과 개선을 다룬다(ISO 22301 설명).",
+  "use": "배경: BCMS는 프로세스 기반"
+ },
+ {
+  "id": "A59",
+  "source": "Arias",
+  "pages": "2",
+  "section": "§1",
+  "text": "As ISO 22301 is requirements-oriented and does not focus on the operation of a BCMS, it does not contain a process reference model of a BCMS.",
+  "ko": "ISO 22301은 요구사항 중심이며 BCMS의 운영에 초점을 두지 않으므로 BCMS의 프로세스 참조모델을 포함하지 않는다.",
+  "use": "배경: 표준은 요구사항 중심"
+ },
+ {
+  "id": "A60",
+  "source": "Arias",
+  "pages": "2",
+  "section": "§1",
+  "text": "Organizations often struggle with performing a checklist approach regarding the BCMS requirements because it does not necessarily lead to a sustainable operated management system.",
+  "ko": "조직은 BCMS 요구사항에 대한 체크리스트 방식 수행에 어려움을 겪는 경우가 많은데, 이것이 지속 가능하게 운영되는 경영시스템으로 반드시 이어지지 않기 때문이다.",
+  "use": "필요성: 체크리스트식 접근의 한계"
+ },
+ {
+  "id": "A61",
+  "source": "Arias",
+  "pages": "2",
+  "section": "§1",
+  "text": "Unlike information security management [13], no process reference model for business continuity management is derived from the agreed standards available.",
+  "ko": "정보보안관리와 달리 합의된 표준에서 도출된 업무연속성관리의 프로세스 참조모델은 없다.",
+  "use": "배경·필요성: 참조모델 부재"
+ },
+ {
+  "id": "A63",
+  "source": "Arias",
+  "pages": "2",
+  "section": "§1",
+  "text": "Hence, the primary objective of this study is to develop a detailed yet generic BCMS core process reference model that is readily adaptable and implementable across all organizations.",
+  "ko": "따라서 이 연구의 주된 목적은 모든 조직에 쉽게 적용·이행할 수 있는, 상세하면서도 일반적인 BCMS 핵심 프로세스 참조모델을 개발하는 것이다.",
+  "use": "배경: Arias의 목적"
+ },
+ {
+  "id": "A62",
+  "source": "Arias",
+  "pages": "3",
+  "section": "§1",
+  "text": "A detailed reference model outlining BCMS processes—including inputs, outputs, interfaces, and interactions at the activity level—facilitates optimal coordination of these processes.",
+  "ko": "활동 수준의 입력, 출력, 인터페이스, 상호작용을 포함해 BCMS 프로세스를 기술하는 상세 참조모델은 이 프로세스들의 최적 조정을 돕는다.",
+  "use": "배경·필요성: 인터페이스·상호작용 기술의 가치"
+ },
+ {
+  "id": "A64",
+  "source": "Arias",
+  "pages": "18",
+  "section": "§5",
+  "text": "A key finding of this pilot initiative is the reinforcement of the systemic nature of the BCMS, emphasizing the interplay between processes and the roles within the BCMS framework.",
+  "ko": "이 시범 적용의 핵심 발견은 BCMS의 체계적 성격이 강화되었다는 점이며, BCMS 틀 안의 프로세스와 역할 사이의 상호작용을 강조한다.",
+  "use": "필요성: 프로세스 간 상호작용의 중요성"
+ },
+ {
+  "id": "A66",
+  "source": "Arias",
+  "pages": "18",
+  "section": "§5",
+  "text": "However, it is evident that an unaltered implementation of the reference model would be inadequate.",
+  "ko": "그러나 참조모델을 변경 없이 그대로 이행하는 것은 부적절할 것임이 분명하다.",
+  "use": "필요성: 조직별 적용·평가 필요"
+ },
+ {
+  "id": "A65",
+  "source": "Arias",
+  "pages": "19",
+  "section": "§6",
+  "text": "A method for determining the requisite capability or maturity level of BCMS processes may be employed within the BCMS framework to incorporate discussions on capability or maturity.",
+  "ko": "BCMS 프로세스에 요구되는 역량·성숙 수준을 정하는 방법을 BCMS 틀 안에서 사용하여 역량·성숙 논의를 포함할 수 있다.",
+  "use": "필요성: 후속 연구로 역량·성숙 논의 제시"
+ },
+ {
+  "id": "B19",
+  "source": "Białas",
+  "pages": "1",
+  "section": "§1",
+  "text": "BCMS encompasses many different processes of different character, interrelated in a complex way.",
+  "ko": "BCMS는 성격이 서로 다른 많은 프로세스를 포함하며, 이들은 복잡하게 상호 연관되어 있다.",
+  "use": "배경: 프로세스 간 복잡한 상호 연관"
+ },
+ {
+  "id": "B20",
+  "source": "Białas",
+  "pages": "1",
+  "section": "§1",
+  "text": "To ensure the system coherency and efficiency, business continuity managers should master many details of these processes.",
+  "ko": "시스템의 정합성과 효율을 보장하기 위해 업무연속성 관리자는 이 프로세스들의 많은 세부 사항을 숙지해야 한다.",
+  "use": "배경: 시스템 정합성(coherency)"
+ },
+ {
+  "id": "B21",
+  "source": "Białas",
+  "pages": "1",
+  "section": "§1",
+  "text": "One of the critical issues in the development of BCMS and the related supporting tools is the quality (adequacy, coherency, preciseness) of various kinds of knowledge embedded in them.",
+  "ko": "BCMS와 관련 지원 도구 개발의 핵심 쟁점 하나는 그 안에 담긴 여러 종류 지식의 품질(적절성, 정합성, 정밀성)이다.",
+  "use": "방법: 지식 품질과 온톨로지 접근"
+ },
+ {
+  "id": "B23",
+  "source": "Białas",
+  "pages": "1",
+  "section": "Abstract",
+  "text": "If these threats occur, BCMS supports organizational resilience, capability for effective response and recovery.",
+  "ko": "이러한 위협이 발생하면 BCMS는 조직의 회복탄력성과 효과적인 대응·복구 능력을 뒷받침한다.",
+  "use": "배경: BCMS와 조직 회복탄력성"
+ }
+]
