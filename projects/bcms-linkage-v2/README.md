@@ -77,3 +77,6 @@ python3 -I scripts/mkmap.py && python3 -I scripts/build_all.py
 - 6개 차원과 "연결 품질" 용어는 연구자가 제시한 초기 가설이다. 두 논문 안에서 추적성은 근거가 없고, 정합성·증빙성·책임성·최신성은 간접 근거, 환류폐쇄성은 비교적 직접 근거다.
 - 6개 차원은 서로 겹칠 수 있어 예비조사에서 변별타당도(차원 간 상관 < 0.85)를 확인해야 한다.
 - 한국어 번역은 참고용이며 원문 대조 대상이 아니다. 통계 기준(I-CVI 0.78, α 0.70 등)은 관례이며 논문 근거가 없다.
+
+## V5 (현행 산출물)
+`outputs/BCMS_연계성_V5.xlsx` · `BCMS_연계성_해설서_V5.docx` · `BCMS_연계성_이야기하기_V5.pptx` · `BCMS_관계MAP_22x22_V5.png`. 기준 데이터: `data/v5/` (V4 워크북 원본·baseline JSON·story.json). V3 파일은 `outputs/archive_v3/`.
